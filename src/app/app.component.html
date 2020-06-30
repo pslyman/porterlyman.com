@@ -1,0 +1,16 @@
+<div style="text-align: center;" class="content">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+<div class="justify">
+  <div class="parent">
+    <div *ngFor="let tile of tiles" class="tile" [ngClass]="{ big: tile.big, deepen: tile.toggled}" (click)="tileClick(tile.id)">
+      <div *ngIf="tile.title || tile.subTitle || tile.text">
+        <h2 *ngIf="tile.title">{{ tile.title }}</h2>
+        <h3 *ngIf="tile.subTitle">{{ tile.subTitle }}</h3>
+        <p *ngIf="tile.text">{{ tile.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

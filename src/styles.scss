@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background-color: rgb(225, 226, 225);
+  margin: 0;
+}
+
+h1 {
+  font-size: xxx-large;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  font-size: initial;
+  font-weight: unset;
+  font-style: italic;
+}
