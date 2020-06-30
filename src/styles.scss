@@ -1,3 +1,12 @@
+html {
+  overflow:   scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 html,
 body {
   background-color: rgb(225, 226, 225);
@@ -17,4 +26,11 @@ h3 {
   font-size: initial;
   font-weight: unset;
   font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px auto;
+  font-weight: bold;
 }

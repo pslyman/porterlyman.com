@@ -15,7 +15,6 @@
 
 .tile {
   transition: box-shadow 0.2s ease-in-out, transform 0.2s, height 0.1s linear;
-
   background-color: rgb(245, 245, 246);
   margin: 10px;
   height: 200px;
@@ -24,15 +23,19 @@
   padding: 10px;
   box-shadow: 3px 3px 3px #888888;
   border-radius: 7.5px;
-
   overflow-y: hidden;
+}
 
-  &:hover {
-    cursor: pointer;
-    background-color: #ecf6ff;
-    box-shadow: 6px 6px 5px #888888;
-    transform: scale(1.03);
-  }
+.fadeout {
+  bottom: -10px;
+  height: 4em;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(245, 245, 246, 1) 100%
+  );
+
+  position: sticky;
+  width: 100%;
 }
 
 .big {
@@ -40,20 +43,37 @@
 }
 
 .deepen {
-  height: 420px;
+  height: 420px !important;
   background-color: #ecf6ff;
+  overflow-y: scroll;
+  .fadeout {
+    display: none;
+  }
+  &::-webkit-scrollbar {
+    width: 7px;
+    background: inherit; 
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+}
+
+@media (hover: hover) {
+  /* Primary Input responds to hover fully on devices where hover is possible (non mobile, just where there is a pointer) */
+  .tile:hover {
+    cursor: pointer;
+    background-color: rgb(235, 245, 255);
+    box-shadow: 6px 6px 5px rgb(136, 136, 136);
+    transform: scale(1.03);
+    .fadeout {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 1250px) {
-  .tile {
-    max-width: calc((100% / 3) - 60px);
-  }
-  .big {
-    max-width: calc(((100% / 3) * 2) - 80px);
-  }
-}
-
-@media (max-width: 1024px) {
   .tile {
     max-width: calc((100% / 2) - 40px);
   }
