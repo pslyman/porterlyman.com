@@ -14,6 +14,8 @@
 }
 
 .tile {
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s, height 0.1s linear;
+
   background-color: rgb(245, 245, 246);
   margin: 10px;
   height: 200px;
@@ -21,12 +23,16 @@
   width: 100%;
   padding: 10px;
   box-shadow: 3px 3px 3px #888888;
-}
+  border-radius: 7.5px;
 
-.tile:hover {
-  cursor: pointer;
-  background-color: #ecf6ff;
-  box-shadow: 5px 5px 5px #888888;
+  overflow-y: hidden;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #ecf6ff;
+    box-shadow: 6px 6px 5px #888888;
+    transform: scale(1.03);
+  }
 }
 
 .big {

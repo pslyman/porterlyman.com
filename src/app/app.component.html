@@ -4,7 +4,7 @@
   </h1>
 </div>
 <div class="justify">
-  <div class="parent">
+  <div class="parent" [@cardAnimation]="tiles.length">
     <div *ngFor="let tile of tiles" class="tile" [ngClass]="{ big: tile.big, deepen: tile.toggled}" (click)="tileClick(tile.id)">
       <div *ngIf="tile.title || tile.subTitle || tile.text">
         <h2 *ngIf="tile.title">{{ tile.title }}</h2>

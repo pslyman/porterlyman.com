@@ -1,10 +1,39 @@
 import { Component, OnInit } from "@angular/core";
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
   selector: "app-root",
   templateUrl: `./app.component.html`,
   styleUrls: ["./app.component.scss"],
+  animations: [
+
+    // Trigger animation cards array
+    trigger('cardAnimation', [
+      // Transition from any state to any state
+      transition('* => *', [
+        // Initially the all cards are not visible
+        query(':enter', style({ opacity: 0 }), { optional: true }),
+
+        // Each card will appear sequentially with the delay of 300ms
+        query(':enter', stagger('30ms', [
+          animate('.5s ease-in', keyframes([
+            style({ opacity: 0, transform: 'translateY(-50%)', offset: 0 }),
+            style({ opacity: .5, transform: 'translateY(-10px) scale(1.1)', offset: 0.3 }),
+            style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+          ]))]), { optional: true }),
+
+        // Cards will disappear sequentially with the delay of 300ms
+        query(':leave', stagger('300ms', [
+          animate('500ms ease-out', keyframes([
+            style({ opacity: 1, transform: 'scale(1.1)', offset: 0 }),
+            style({ opacity: .5, transform: 'scale(.5)', offset: 0.3 }),
+            style({ opacity: 0, transform: 'scale(0)', offset: 1 }),
+          ]))]), { optional: true })
+      ]),
+    ]),
+  ]
 })
+
 export class AppComponent implements OnInit {
   tiles = [
     {
@@ -19,7 +48,7 @@ export class AppComponent implements OnInit {
       id: 1,
       title: "item2",
       subTitle: "",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       big: false,
       toggled: false,
     },
@@ -85,8 +114,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   tileClick(tileId) {
-    console.log(tileId);
     this.tiles[tileId].toggled = !this.tiles[tileId].toggled;
-    console.log(this.tiles[tileId].toggled);
   }
 }
