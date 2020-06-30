@@ -1,3 +1,30 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  width: 80%;
+  right: 0;
+  margin: auto;
+}
+
+.display-switcher {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  h4 {
+    margin-left: 12px;
+    border-bottom: solid white 1px;
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: solid black 1px;
+    }
+  }
+  .selected {
+    border-bottom: solid black 1px;
+  }
+}
+
 .justify {
   position: absolute;
   margin: auto;
@@ -11,17 +38,18 @@
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
+  width: fit-content;
 }
 
 .tile {
   transition: box-shadow 0.2s ease-in-out, transform 0.2s, height 0.1s linear;
-  background-color: rgb(245, 245, 246);
+  background-color: rgb(255, 255, 255);
   margin: 10px;
   height: 200px;
-  max-width: calc((100% / 4) - 60px);
+  max-width: calc((100% / 4) - 40px);
   width: 100%;
   padding: 10px;
-  box-shadow: 3px 3px 3px #888888;
+  box-shadow: 3px 3px 9px #888888;
   border-radius: 7.5px;
   overflow-y: hidden;
 }
@@ -31,7 +59,7 @@
   height: 4em;
   background: linear-gradient(
     rgba(255, 255, 255, 0) 0%,
-    rgba(245, 245, 246, 1) 100%
+    rgba(255, 255, 255, 1) 100%
   );
 
   position: sticky;
@@ -39,7 +67,7 @@
 }
 
 .big {
-  max-width: calc(((100% / 4) * 2) - 80px);
+  max-width: calc(((100% / 4) * 2) - 40px);
 }
 
 .deepen {
@@ -51,13 +79,42 @@
   }
   &::-webkit-scrollbar {
     width: 7px;
-    background: inherit; 
+    background: inherit;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 2px solid white; /* should match background, can't be transparent */
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
+
+.justify-skills {
+  position: absolute;
+  margin: auto;
+  margin-bottom: 50px;
+  left: 0;
+  width: 80%;
+  right: 0;
+}
+
+.parent-skills {
+  display: flex;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.skill-tile {
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  height: 50px;
+  max-width: calc((100% / 4) - 40px);
+  width: 100%;
+  padding: 10px;
+  box-shadow: 3px 3px 9px #888888;
+  border-radius: 7.5px;
+  display: flex;
+  align-items: center;
 }
 
 @media (hover: hover) {
@@ -80,6 +137,17 @@
   .big {
     max-width: calc(100% - 40px);
   }
+  .justify {
+    margin-bottom: 0;
+    width: 87%;
+  }
+  .content {
+    width: 87%;
+  }
+  h1 {
+    line-height: 60px;
+    font-size: unset;
+  }
 }
 
 @media (max-width: 480px) {
@@ -91,4 +159,12 @@
     height: 200px;
     max-width: calc(100% - 40px);
   }
+  .justify {
+    margin-bottom: 0;
+    width: 95%;
+  }
+  .content {
+    width: 95%;
+  }
+
 }

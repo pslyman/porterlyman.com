@@ -1,11 +1,39 @@
-<div style="text-align: center;" class="content">
+<div class="content">
   <h1>
     {{ title }}
   </h1>
+  <div class="display-switcher">
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'experience' }"
+      (click)="displaySwitcher = 'experience'"
+    >
+      Experience
+    </h4>
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'skills' }"
+      (click)="displaySwitcher = 'skills'"
+    >
+      Skills
+    </h4>
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'portfolio' }"
+      (click)="displaySwitcher = 'portfolio'"
+    >
+      Portfolio
+    </h4>
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'contact' }"
+      (click)="displaySwitcher = 'contact'"
+    >
+      Contact
+    </h4>
+  </div>
 </div>
-<div class="justify">
-  <div class="parent"  [@cardAnimation]="tiles.length" >
-    <div #parent
+
+<div class="justify" *ngIf="displaySwitcher === 'experience'">
+  <div class="parent" [@cardAnimation]="tiles.length">
+    <div
+      #parent
       *ngFor="let tile of tiles"
       class="tile"
       [ngClass]="{ big: tile.big, deepen: tile.toggled }"
@@ -21,6 +49,16 @@
           </ul>
         </div>
         <div class="fadeout"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="justify-skills" *ngIf="displaySwitcher === 'skills'">
+  <div class="parent-skills" [@cardAnimation]="tiles.length">
+    <div *ngFor="let skill of skills" class="skill-tile">
+      <div *ngIf="skill">
+        <h2>{{ skill }}</h2>
       </div>
     </div>
   </div>
