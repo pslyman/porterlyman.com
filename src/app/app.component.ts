@@ -50,7 +50,7 @@ import { takeWhile, scan, tap } from "rxjs/operators";
         // Cards will disappear sequentially with the delay of 300ms
         query(
           ":leave",
-          stagger("30ms", [
+          stagger("6ms", [
             animate(
               "350ms ease-out",
               keyframes([
