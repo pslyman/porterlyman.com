@@ -26,14 +26,14 @@ import { takeWhile, scan, tap } from "rxjs/operators";
         // Each card will appear sequentially with the delay of 300ms
         query(
           ":enter",
-          stagger("30ms", [
+          stagger("45ms", [
             animate(
               ".5s ease-in",
               keyframes([
-                style({ opacity: 0, transform: "translateY(-25%)", offset: 0 }),
+                style({ opacity: 0, transform: "translateY(-10px) scale(1.05)", offset: 0 }),
                 style({
                   opacity: 0.5,
-                  transform: "translateY(-5px) scale(1.1)",
+                  transform: "translateY(-5px) scale(1)",
                   offset: 0.3,
                 }),
                 style({ opacity: 1, transform: "translateY(0)", offset: 1 }),
@@ -46,13 +46,13 @@ import { takeWhile, scan, tap } from "rxjs/operators";
         // Cards will disappear sequentially with the delay of 300ms
         query(
           ":leave",
-          stagger("300ms", [
+          stagger("30ms", [
             animate(
-              "500ms ease-out",
+              "350ms ease-out",
               keyframes([
-                style({ opacity: 1, transform: "scale(1.1)", offset: 0 }),
-                style({ opacity: 0.5, transform: "scale(.5)", offset: 0.3 }),
-                style({ opacity: 0, transform: "scale(0)", offset: 1 }),
+                style({ opacity: 1, transform: "translateY(0px)", offset: 0 }),
+                style({ opacity: 0.5, transform: "translateY(5px)", offset: 0.3 }),
+                style({ opacity: 0, transform: "translateY(10px) scale(.995)", offset: 1 }),
               ])
             ),
           ]),
@@ -158,7 +158,7 @@ export class AppComponent implements OnInit {
       title: "Software Engineer",
       subTitle: "Health Catalyst (2019 - Current)",
       text:
-        "Returned to work on a small team to focus on a labor management / budgeting application with enterprise features. I work with front-end and back-end, and contribute to each test methodology. Technologies I use:",
+        "Returned here to work on a small team which focuses on a labor management / budgeting application with enterprise features. I work with front-end and back-end, and contribute to each test methodology. Technologies I use:",
       list: [
         "Angular",
         "Typescript",

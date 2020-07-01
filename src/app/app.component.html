@@ -34,8 +34,8 @@
   </div>
 </div>
 
-<div class="justify" *ngIf="displaySwitcher === 'experience'">
-  <div class="parent" [@cardAnimation]="tiles.length">
+<div class="justify" >
+  <div class="parent" [@cardAnimation]="tiles.length" *ngIf="displaySwitcher === 'experience'">
     <div
       #parent
       *ngFor="let tile of tiles"
@@ -60,8 +60,8 @@
   </div>
 </div>
 
-<div class="justify-skills" *ngIf="displaySwitcher === 'skills'">
-  <div class="parent-skills" [@cardAnimation]="tiles.length">
+<div class="justify-skills" >
+  <div class="parent-skills" [@cardAnimation]="tiles.length" *ngIf="displaySwitcher === 'skills'">
     <div *ngFor="let skill of skills" class="skill-tile">
       <div *ngIf="skill">
         <h2>{{ skill }}</h2>
@@ -70,8 +70,8 @@
   </div>
 </div>
 
-<div class="justify" *ngIf="displaySwitcher === 'portfolio'">
-  <div class="parent" [@cardAnimation]="tiles.length">
+<div class="justify" >
+  <div class="parent" [@cardAnimation]="tiles.length" *ngIf="displaySwitcher === 'portfolio'">
     <div
       *ngFor="let item of portfolio"
       class="tile big portfolio-tile"
@@ -90,8 +90,8 @@
   </div>
 </div>
 
-<div class="justify" *ngIf="displaySwitcher === 'contact'">
-  <div class="parent" [@cardAnimation]="tiles.length">
+<div class="justify" >
+  <div class="parent" [@cardAnimation]="tiles.length" *ngIf="displaySwitcher === 'contact'">
     <div
       *ngFor="let item of contact"
       class="tile big portfolio-tile"
