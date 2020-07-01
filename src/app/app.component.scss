@@ -89,7 +89,7 @@
     display: none;
   }
   &::-webkit-scrollbar {
-    width: 7px;
+    width: 10px;
     background: inherit;
   }
   &::-webkit-scrollbar-thumb {
@@ -265,9 +265,9 @@
     h4 {
       margin-left: 0;
       border-bottom: solid white 1px;
-      margin: 0;
+      margin: 0 0 5px 0;
       padding-bottom: 10px;
-      padding-top: 100%;
+      padding-top: 15px;
     }
   }
 }

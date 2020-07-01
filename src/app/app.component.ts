@@ -30,10 +30,10 @@ import { takeWhile, scan, tap } from "rxjs/operators";
             animate(
               ".5s ease-in",
               keyframes([
-                style({ opacity: 0, transform: "translateY(-50%)", offset: 0 }),
+                style({ opacity: 0, transform: "translateY(-25%)", offset: 0 }),
                 style({
                   opacity: 0.5,
-                  transform: "translateY(-10px) scale(1.1)",
+                  transform: "translateY(-5px) scale(1.1)",
                   offset: 0.3,
                 }),
                 style({ opacity: 1, transform: "translateY(0)", offset: 1 }),
@@ -88,20 +88,21 @@ export class AppComponent implements OnInit {
 
   portfolio = [
     {
-      id: 0,
-      title: "Pizza Dough Premium",
-      text:
-        "Passion product, using 20 year-old formulas and bringing the well known app into your hands. With added premium features.",
-      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator.free',
-      source: '../assets/pizza-icon.png'
-    },
-    {
       id: 1,
       title: "Pizza Dough Calculator",
       text:
         "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
       link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator',
       source: '../assets/pizza-free.png'
+    },
+    {
+      
+      id: 0,
+      title: "Pizza Dough Premium",
+      text:
+        "Same full-featured product as above, but with added premium features for the extra dedicated pizza chefs.",
+      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator.free',
+      source: '../assets/pizza-icon.png'
     },
     {
       id: 2,
