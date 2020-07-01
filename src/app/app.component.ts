@@ -30,7 +30,11 @@ import { takeWhile, scan, tap } from "rxjs/operators";
             animate(
               ".5s ease-in",
               keyframes([
-                style({ opacity: 0, transform: "translateY(-10px) scale(1.05)", offset: 0 }),
+                style({
+                  opacity: 0,
+                  transform: "translateY(-10px) scale(1.05)",
+                  offset: 0,
+                }),
                 style({
                   opacity: 0.5,
                   transform: "translateY(-5px) scale(1)",
@@ -51,8 +55,16 @@ import { takeWhile, scan, tap } from "rxjs/operators";
               "350ms ease-out",
               keyframes([
                 style({ opacity: 1, transform: "translateY(0px)", offset: 0 }),
-                style({ opacity: 0.5, transform: "translateY(5px)", offset: 0.3 }),
-                style({ opacity: 0, transform: "translateY(10px) scale(.995)", offset: 1 }),
+                style({
+                  opacity: 0.5,
+                  transform: "translateY(5px)",
+                  offset: 0.3,
+                }),
+                style({
+                  opacity: 0,
+                  transform: "translateY(10px) scale(.995)",
+                  offset: 1,
+                }),
               ])
             ),
           ]),
@@ -71,20 +83,19 @@ export class AppComponent implements OnInit {
     {
       id: 0,
       title: "LinkedIn",
-      link: 'https://www.linkedin.com/in/porter-lyman-23059853/',
+      link: "https://www.linkedin.com/in/porter-lyman-23059853/",
     },
     {
       id: 1,
       title: "Github",
-      link: 'https://github.com/pslyman',
+      link: "https://github.com/pslyman",
     },
     {
       id: 2,
       title: "Stack Overflow",
-      link: 'https://stackoverflow.com/users/8659250/porter-lyman',
+      link: "https://stackoverflow.com/users/8659250/porter-lyman",
     },
-    
-  ]
+  ];
 
   portfolio = [
     {
@@ -92,25 +103,25 @@ export class AppComponent implements OnInit {
       title: "Pizza Dough Calculator",
       text:
         "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
-      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator',
-      source: '../assets/pizza-free.png'
+      link:
+        "https://play.google.com/store/apps/details?id=pizza.dough.calculator",
+      source: "../assets/pizza-free.png",
     },
     {
-      
       id: 0,
       title: "Pizza Dough Premium",
       text:
         "Same full-featured product as above, but with added premium features for the extra dedicated pizza chefs.",
-      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator.free',
-      source: '../assets/pizza-icon.png'
+      link:
+        "https://play.google.com/store/apps/details?id=pizza.dough.calculator.free",
+      source: "../assets/pizza-icon.png",
     },
     {
       id: 2,
       title: "Github/pslyman",
-      text:
-        "Miscellenious contributions, side projects, and hobbies.",
-      link: 'https://github.com/pslyman?tab=repositories',
-      source: '../assets/github-icon.png'
+      text: "Miscellenious contributions, side projects, and hobbies.",
+      link: "https://github.com/pslyman?tab=repositories",
+      source: "../assets/github-icon.png",
     },
   ];
 
@@ -251,7 +262,14 @@ export class AppComponent implements OnInit {
   }
 
   openLinkUrl(url) {
-    window.open(url, '_blank');
+    window.open(url, "_blank");
+  }
+
+  jumpToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   scrollToTop(el) {
