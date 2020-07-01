@@ -65,9 +65,91 @@ import { takeWhile, scan, tap } from "rxjs/operators";
 export class AppComponent implements OnInit {
   title = "Porter Lyman";
 
-  displaySwitcher = 'experience';
+  displaySwitcher = "experience";
 
-  skills = ['Angular', 'Typescript', 'CSS', 'HTML', 'Javascript', 'jQuery', 'C#', 'Vue', 'Bootstrap', 'SQL', 'MySQL', 'SQL Server', 'SQLAlchemy', 'Fluent Migrator', 'Docker', 'Node.js', 'Python', 'Ruby', 'Falcon framework', 'Ionic', 'Cordova', 'Appium', 'Selenium', 'Protractor', 'Cypress', 'Karma', 'Jasmine', 'Mocha', '.NET Core', 'TFS', 'Jira', 'ADO', 'And more...'  ]
+  contact = [
+    {
+      id: 0,
+      title: "LinkedIn",
+      link: 'https://www.linkedin.com/in/porter-lyman-23059853/',
+    },
+    {
+      id: 1,
+      title: "Github",
+      link: 'https://github.com/pslyman',
+    },
+    {
+      id: 2,
+      title: "Stack Overflow",
+      link: 'https://stackoverflow.com/users/8659250/porter-lyman',
+    },
+    
+  ]
+
+  portfolio = [
+    {
+      id: 0,
+      title: "Pizza Dough Premium",
+      text:
+        "Passion product, using 20 year-old formulas and bringing the well known app into your hands. With added premium features.",
+      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator.free',
+      source: '../assets/pizza-icon.png'
+    },
+    {
+      id: 1,
+      title: "Pizza Dough Calculator",
+      text:
+        "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
+      link: 'https://play.google.com/store/apps/details?id=pizza.dough.calculator',
+      source: '../assets/pizza-free.png'
+    },
+    {
+      id: 2,
+      title: "Github/pslyman",
+      text:
+        "Miscellenious contributions, side projects, and hobbies.",
+      link: 'https://github.com/pslyman?tab=repositories',
+      source: '../assets/github-icon.png'
+    },
+  ];
+
+  skills = [
+    "Angular",
+    "Typescript",
+    "Redux",
+    "Vue",
+    "CSS",
+    "HTML",
+    "Javascript",
+    "jQuery",
+    "C#",
+    "Vue",
+    "Bootstrap",
+    "SQL",
+    "MySQL",
+    "SQL Server",
+    "SQLAlchemy",
+    "Fluent Migrator",
+    "Docker",
+    "Node.js",
+    "Python",
+    "Ruby",
+    "Falcon framework",
+    "Ionic",
+    "Cordova",
+    "Appium",
+    "Selenium",
+    "Protractor",
+    "Cypress",
+    "Karma",
+    "Jasmine",
+    "Mocha",
+    ".NET Core",
+    "TFS",
+    "Jira",
+    "ADO",
+    "And more...",
+  ];
 
   tiles = [
     {
@@ -136,8 +218,16 @@ export class AppComponent implements OnInit {
       id: 4,
       title: "QA / Software Engineer Intern",
       subTitle: "Health Catalyst (May 2017 – April 2018)",
-      text: "Part of the QA team, specializing in Website Development Testing. Manual and Automated testing included. Found bugs, recommended improvements, and worked with developers and project manager to better the product in all ways possible. Wrote test case/scenarios, bug cases, and worked closely with team. Put heavy work into webdriver automations. Thoroughly enjoyed developing e2e and unit tests for their Angular app. I worked very closely with the following technologies:",
-      list: ['Selenium', 'C#', 'Visual Studio test management', 'Jasmine', 'Karma', 'TFS test planning and bug/task management'],
+      text:
+        "Part of the QA team, specializing in Website Development Testing. Manual and Automated testing included. Found bugs, recommended improvements, and worked with developers and project manager to better the product in all ways possible. Wrote test case/scenarios, bug cases, and worked closely with team. Put heavy work into webdriver automations. Thoroughly enjoyed developing e2e and unit tests for their Angular app. I worked very closely with the following technologies:",
+      list: [
+        "Selenium",
+        "C#",
+        "Visual Studio test management",
+        "Jasmine",
+        "Karma",
+        "TFS test planning and bug/task management",
+      ],
       big: false,
       toggled: false,
     },
@@ -147,7 +237,7 @@ export class AppComponent implements OnInit {
       subTitle: "Student (Jan 2017 - Apr 2017))",
       text:
         "Full-stack (web) bootcamp. Interned with Health Catalyst immediately afterwards. The main emphasis was on the following:",
-      list: ['Javascript', 'CSS', 'HTML', 'Angular', 'Git', 'NodeJS'],
+      list: ["Javascript", "CSS", "HTML", "Angular", "Git", "NodeJS"],
       big: false,
       toggled: false,
     },
@@ -157,6 +247,10 @@ export class AppComponent implements OnInit {
 
   tileClick(tileId) {
     this.tiles[tileId].toggled = !this.tiles[tileId].toggled;
+  }
+
+  openLinkUrl(url) {
+    window.open(url, '_blank');
   }
 
   scrollToTop(el) {

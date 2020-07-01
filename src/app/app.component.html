@@ -1,5 +1,9 @@
-<div class="content">
-  <h1>
+<h1 class="h1-mobile">
+  {{ title }}
+</h1>
+
+<div class="content-nav">
+  <h1 class="h1-hide">
     {{ title }}
   </h1>
   <div class="display-switcher">
@@ -40,7 +44,9 @@
       (click)="tileClick(tile.id); scrollToTop(parent)"
     >
       <div *ngIf="tile.title || tile.subTitle || tile.text || tile.list">
-        <h2 *ngIf="tile.title">{{ tile.title }}</h2>
+        <h2 class="h2-mobile-compatible" *ngIf="tile.title">
+          {{ tile.title }}
+        </h2>
         <h3 *ngIf="tile.subTitle">{{ tile.subTitle }}</h3>
         <p *ngIf="tile.text">{{ tile.text }}</p>
         <div *ngIf="tile.list">
@@ -59,6 +65,45 @@
     <div *ngFor="let skill of skills" class="skill-tile">
       <div *ngIf="skill">
         <h2>{{ skill }}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="justify" *ngIf="displaySwitcher === 'portfolio'">
+  <div class="parent" [@cardAnimation]="tiles.length">
+    <div
+      *ngFor="let item of portfolio"
+      class="tile big portfolio-tile"
+      (click)="openLinkUrl(item.link)"
+    >
+      <div *ngIf="item.title || item.link">
+        <div [ngClass]="{ 'image-title-pairing': item.source }">
+          <img *ngIf="item.source" class="image" src="{{ item.source }}" />
+          <div class="keep-left-please">
+            <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+            <p>{{ item.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="justify" *ngIf="displaySwitcher === 'contact'">
+  <div class="parent" [@cardAnimation]="tiles.length">
+    <div
+      *ngFor="let item of contact"
+      class="tile big portfolio-tile"
+      (click)="openLinkUrl(item.link)"
+    >
+      <div *ngIf="item.title || item.link">
+        <div class="keep-left-please">
+          <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+          <p>
+            <em>{{ item.link }}</em>
+          </p>
+        </div>
       </div>
     </div>
   </div>
