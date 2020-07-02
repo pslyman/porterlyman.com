@@ -94,10 +94,12 @@
       >
         <div *ngIf="item.title || item.link">
           <div [ngClass]="{ 'image-title-pairing': item.source }">
-            <img *ngIf="item.source" class="image" src="{{ item.source }}" />
+            <div class="img-container">
+              <img *ngIf="item.source" class="image" src="{{ item.source }}" />
+            </div>
             <div class="keep-left-please">
               <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
-              <p>{{ item.text }}</p>
+              <p class="shrink-the-margins">{{ item.text }}</p>
             </div>
           </div>
         </div>
@@ -113,7 +115,7 @@
     >
       <div
         *ngFor="let item of contact"
-        class="tile big portfolio-tile"
+        class="tile big portfolio-tile contact-tile"
         (click)="openLinkUrl(item.link)"
       >
         <div *ngIf="item.title || item.link">

@@ -42,7 +42,7 @@
   left: 0;
   width: 80%;
   right: 0;
-  transition: all .75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .parent {
@@ -107,7 +107,7 @@
   width: 80%;
   right: 0;
   margin-top: 25px;
-  transition: all .75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .parent-skills {
@@ -131,7 +131,10 @@
 }
 
 .portfolio-tile {
-  height: 130px;
+  height: fit-content;
+}
+.contact-tile {
+  height: 80px;
 }
 
 .image-title-pairing {
@@ -139,11 +142,15 @@
   justify-content: space-between;
 }
 
+.img-container {
+  height: 100px;
+}
+
 .image {
   border-radius: 7.5px;
   margin-right: 15px;
-  height: 100px;
-  width: auto;
+
+  width: 100px;
 }
 
 .keep-left-please {
@@ -151,12 +158,18 @@
   width: 100%;
 }
 
+.shrink-the-margins {
+  margin-bottom: 0 ;
+  margin-top: 5px ;
+}
+
+
 @media (hover: hover) {
   /* Primary Input responds to hover fully on devices where hover is possible (non mobile, just where there is a pointer) */
   .tile:hover {
     cursor: pointer;
     background-color: rgb(235, 245, 255);
-    box-shadow: 6px 6px 5px rgb(136, 136, 136);
+    box-shadow: 8px 8px 12px -8px rgb(136, 136, 136);
     transform: scale(1.03);
     .fadeout {
       display: none;
