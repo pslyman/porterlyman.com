@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
 
   portfolio = [
     {
-      id: 1,
+      id: 0,
       title: "Pizza Dough Calculator",
       text:
         "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
       source: "../assets/pizza-free.png",
     },
     {
-      id: 0,
+      id: 1,
       title: "Pizza Dough Premium",
       text:
         "Same full-featured product as above, but with added premium features for the extra dedicated pizza chefs.",
@@ -118,6 +118,15 @@ export class AppComponent implements OnInit {
     },
     {
       id: 2,
+      title: "porter.lyman.com",
+      text:
+        "This tasty snack right here.",
+      link:
+        "https://www.porterlyman.herokuapp.com",
+      source: "../assets/pl-icon.png",
+    },
+    {
+      id: 3,
       title: "Github/pslyman",
       text: "Miscellenious contributions, side projects, and hobbies.",
       link: "https://github.com/pslyman?tab=repositories",
