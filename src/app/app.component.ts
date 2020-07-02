@@ -122,7 +122,7 @@ export class AppComponent implements OnInit {
       text:
         "This tasty snack right here.",
       link:
-        "https://www.porterlyman.herokuapp.com",
+        "https://porterlyman.herokuapp.com/",
       source: "../assets/pl-icon.png",
     },
     {
