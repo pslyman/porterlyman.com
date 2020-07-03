@@ -4,7 +4,7 @@
   left: 0;
   width: calc(80% - 40px);
   right: 0;
-  margin: auto;
+  margin: auto auto 20px auto;
   h1 {
     position: relative;
     bottom: -20px;
@@ -53,7 +53,8 @@
 }
 
 .tile {
-  transition: box-shadow 0.2s ease-in-out, transform 0.4s ease-in-out, height 0.1s linear, opacity 0.3s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, all .2s ease-in-out,
+    height 0.1s linear, opacity 0.3s ease-in-out;
   background-color: rgb(255, 255, 255);
   margin: 10px;
   height: 200px;
@@ -89,16 +90,19 @@
   max-width: calc(((100% / 4) * 2) - 40px);
 }
 
-
-
 .deepen {
   height: 80vh !important;
-  width: calc(100% - 40px) !important;
-  max-width: calc(100% - 40px) !important;
+  width: calc(50% - 40px) !important;
+  max-width: calc(50% - 40px) !important;
   position: absolute;
   z-index: 200;
   background-color: #ecf6ff;
   overflow-y: scroll;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.2s ease-in-out;
+
   .fadeout {
     display: none;
   }
@@ -173,10 +177,9 @@
 }
 
 .shrink-the-margins {
-  margin-bottom: 0 ;
-  margin-top: 5px ;
+  margin-bottom: 0;
+  margin-top: 5px;
 }
-
 
 @media (hover: hover) {
   /* Primary Input responds to hover fully on devices where hover is possible (non mobile, just where there is a pointer) */
@@ -196,6 +199,9 @@
     height: 80vh !important;
     width: calc(100% - 40px) !important;
     max-width: calc(100% - 40px) !important;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .tile {
     max-width: calc((100% / 2) - 40px);
@@ -248,7 +254,7 @@
   .h1-mobile {
     display: block;
     text-align: center;
-    padding: 30px;
+    padding: 10px 0;
     font-size: xx-large;
   }
   .big {
@@ -289,7 +295,6 @@
     z-index: 300;
     background-color: rgb(255, 255, 255);
     box-shadow: 3px 3px 9px #888888;
-
   }
 
   .display-switcher {

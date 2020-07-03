@@ -289,18 +289,25 @@ export class AppComponent implements OnInit {
     window.history.replaceState(null, null, `#${this.displaySwitcher}`);
   }
 
-  tileClick(tileId) {
+  tileClick(tileId, elementId) {
     this.tiles[tileId].toggled = !this.tiles[tileId].toggled;
 
     this.toggleTiles(tileId);
-    this.jumpToTop();
+
     window.history.replaceState(
       null,
       null,
       `#${this.displaySwitcher}#${tileId}`
     );
-    let urlHash = window.location.href.split("#")[2];
-    console.log(urlHash);
+    if (this.tiles.every((element) => !element.toggled)) {
+      window.history.replaceState(null, null, `#${this.displaySwitcher}`);
+      let el = document.getElementById(`item-${elementId}`);
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    } else {
+      this.jumpToTop();
+    }
   }
 
   toggleTiles(tileId) {
