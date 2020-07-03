@@ -9,7 +9,9 @@
   <div class="display-switcher">
     <h4
       [ngClass]="{ selected: displaySwitcher === 'experience' }"
-      (click)="displaySwitcher = 'experience'; jumpToTop(); cleanupTiles(); updateUrl()"
+      (click)="
+        displaySwitcher = 'experience'; jumpToTop(); cleanupTiles(); updateUrl()
+      "
     >
       Experience
     </h4>
@@ -46,10 +48,12 @@
         *ngFor="let tile of tiles; let i = index"
         class="tile"
         [ngClass]="{ big: tile.big, deepen: tile.toggled, vanish: tile.hide }"
-        id="item-{{i}}"
-        (click)="tileClick(tile.id, i); scrollToTop(parent)"
+        id="item-{{ i }}"
+        (click)="
+          tileClick(tile.id, i); scrollToTop(parent); stopPropagation($event)
+        "
       >
-        <div *ngIf="tile.title || tile.subTitle || tile.text || tile.list" >
+        <div *ngIf="tile.title || tile.subTitle || tile.text || tile.list">
           <h2 class="h2-mobile-compatible" *ngIf="tile.title">
             {{ tile.title }}
           </h2>

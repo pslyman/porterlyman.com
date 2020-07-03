@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import {
   trigger,
   style,
@@ -75,6 +75,14 @@ import { takeWhile, scan, tap } from "rxjs/operators";
   ],
 })
 export class AppComponent implements OnInit {
+  @HostListener("document:click", ["$event"])
+  documentClick(event: MouseEvent) {
+    this.tiles.forEach((element) => {
+      element.hide = false;
+      element.toggled = false;
+    });
+  }
+
   title = "Porter Lyman";
 
   displaySwitcher = "experience";
@@ -306,7 +314,11 @@ export class AppComponent implements OnInit {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 200);
     } else {
-      this.jumpToTop();
+      /* this.jumpToTop(); */
+      let el = document.getElementById(`item-${elementId}`);
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
     }
   }
 
@@ -317,6 +329,10 @@ export class AppComponent implements OnInit {
         element.toggled = false;
       }
     });
+  }
+
+  stopPropagation(e) {
+    e.stopPropagation();
   }
 
   openLinkUrl(url) {
