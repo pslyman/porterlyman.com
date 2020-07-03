@@ -119,10 +119,8 @@ export class AppComponent implements OnInit {
     {
       id: 2,
       title: "porter.lyman.com",
-      text:
-        "This tasty snack right here.",
-      link:
-        "https://porterlyman.herokuapp.com/",
+      text: "This tasty snack right here.",
+      link: "https://porterlyman.herokuapp.com/",
       source: "../assets/pl-icon.png",
     },
     {
@@ -196,6 +194,7 @@ export class AppComponent implements OnInit {
       ],
       big: true,
       toggled: false,
+      hide: false,
     },
     {
       id: 1,
@@ -206,6 +205,7 @@ export class AppComponent implements OnInit {
       list: ["Selenium", "Appium", "Protractor", "Javascript"],
       big: true,
       toggled: false,
+      hide: false,
     },
     {
       id: 2,
@@ -224,6 +224,7 @@ export class AppComponent implements OnInit {
       ],
       big: true,
       toggled: false,
+      hide: false,
     },
     {
       id: 3,
@@ -234,6 +235,7 @@ export class AppComponent implements OnInit {
       list: [],
       big: false,
       toggled: false,
+      hide: false,
     },
     {
       id: 4,
@@ -251,6 +253,7 @@ export class AppComponent implements OnInit {
       ],
       big: false,
       toggled: false,
+      hide: false,
     },
     {
       id: 5,
@@ -261,13 +264,52 @@ export class AppComponent implements OnInit {
       list: ["Javascript", "CSS", "HTML", "Angular", "Git", "NodeJS"],
       big: false,
       toggled: false,
+      hide: false,
     },
   ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    let urlHash = window.location.href.split("#")[1];
+
+    if (urlHash) {
+      this.displaySwitcher = urlHash;
+    } else {
+      this.displaySwitcher = "experience";
+    }
+    let urlIdHash = Number(window.location.href.split("#")[2]);
+    if (urlIdHash) {
+      let match = this.tiles.find((item) => item.id === urlIdHash);
+      if (!!match) {
+        match.toggled = true;
+        this.toggleTiles(urlIdHash);
+      }
+    }
+  }
+  updateUrl() {
+    window.history.replaceState(null, null, `#${this.displaySwitcher}`);
+  }
 
   tileClick(tileId) {
     this.tiles[tileId].toggled = !this.tiles[tileId].toggled;
+
+    this.toggleTiles(tileId);
+    this.jumpToTop();
+    window.history.replaceState(
+      null,
+      null,
+      `#${this.displaySwitcher}#${tileId}`
+    );
+    let urlHash = window.location.href.split("#")[2];
+    console.log(urlHash);
+  }
+
+  toggleTiles(tileId) {
+    this.tiles.forEach((element) => {
+      if (element.id !== tileId) {
+        element.hide = !element.hide;
+        element.toggled = false;
+      }
+    });
   }
 
   openLinkUrl(url) {
@@ -278,6 +320,13 @@ export class AppComponent implements OnInit {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
+    });
+  }
+
+  cleanupTiles() {
+    this.tiles.forEach((element) => {
+      element.hide = false;
+      element.toggled = false;
     });
   }
 

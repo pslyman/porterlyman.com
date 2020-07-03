@@ -53,7 +53,7 @@
 }
 
 .tile {
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s, height 0.1s linear;
+  transition: box-shadow 0.2s ease-in-out, transform 0.4s ease-in-out, height 0.1s linear, opacity 0.3s ease-in-out;
   background-color: rgb(255, 255, 255);
   margin: 10px;
   height: 200px;
@@ -77,19 +77,33 @@
   width: 100%;
 }
 
+.vanish {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
 .big {
   max-width: calc(((100% / 4) * 2) - 40px);
 }
 
+
+
 .deepen {
-  height: 420px !important;
+  height: 80vh !important;
+  width: calc(100% - 40px) !important;
+  max-width: calc(100% - 40px) !important;
+  position: absolute;
+  z-index: 200;
   background-color: #ecf6ff;
   overflow-y: scroll;
   .fadeout {
     display: none;
   }
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     background: inherit;
   }
   &::-webkit-scrollbar-thumb {
@@ -178,6 +192,11 @@
 }
 
 @media (max-width: 1250px) {
+  .deepen {
+    height: 80vh !important;
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 40px) !important;
+  }
   .tile {
     max-width: calc((100% / 2) - 40px);
   }
@@ -209,6 +228,11 @@
 }
 
 @media (max-width: 530px) {
+  .deepen {
+    height: 70vh !important;
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 40px) !important;
+  }
   .justify {
     margin: 20px 20px 70px 20px;
   }
@@ -262,9 +286,10 @@
     margin: 0;
     position: fixed;
     bottom: 0;
-    z-index: 100;
+    z-index: 300;
     background-color: rgb(255, 255, 255);
     box-shadow: 3px 3px 9px #888888;
+
   }
 
   .display-switcher {

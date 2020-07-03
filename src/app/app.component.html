@@ -9,30 +9,31 @@
   <div class="display-switcher">
     <h4
       [ngClass]="{ selected: displaySwitcher === 'experience' }"
-      (click)="displaySwitcher = 'experience'; jumpToTop()"
+      (click)="displaySwitcher = 'experience'; jumpToTop(); cleanupTiles(); updateUrl()"
     >
       Experience
     </h4>
     <h4
       [ngClass]="{ selected: displaySwitcher === 'skills' }"
-      (click)="displaySwitcher = 'skills'; jumpToTop()"
+      (click)="displaySwitcher = 'skills'; jumpToTop(); updateUrl()"
     >
       Skills
     </h4>
     <h4
       [ngClass]="{ selected: displaySwitcher === 'portfolio' }"
-      (click)="displaySwitcher = 'portfolio'; jumpToTop()"
+      (click)="displaySwitcher = 'portfolio'; jumpToTop(); updateUrl()"
     >
       Portfolio
     </h4>
     <h4
       [ngClass]="{ selected: displaySwitcher === 'contact' }"
-      (click)="displaySwitcher = 'contact'; jumpToTop()"
+      (click)="displaySwitcher = 'contact'; jumpToTop(); updateUrl()"
     >
       Contact
     </h4>
   </div>
 </div>
+
 <div #appContent class="appContent">
   <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'experience' }">
     <div
@@ -44,7 +45,7 @@
         #parent
         *ngFor="let tile of tiles"
         class="tile"
-        [ngClass]="{ big: tile.big, deepen: tile.toggled }"
+        [ngClass]="{ big: tile.big, deepen: tile.toggled, vanish: tile.hide }"
         (click)="tileClick(tile.id); scrollToTop(parent)"
       >
         <div *ngIf="tile.title || tile.subTitle || tile.text || tile.list">
