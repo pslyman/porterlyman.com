@@ -1,4 +1,9 @@
-import { Component, OnInit, HostListener } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  HostListener,
+  AfterContentInit,
+} from "@angular/core";
 import {
   trigger,
   style,
@@ -74,7 +79,7 @@ import { takeWhile, scan, tap } from "rxjs/operators";
     ]),
   ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterContentInit {
   @HostListener("document:click", ["$event"])
   documentClick(event: MouseEvent) {
     this.tiles.forEach((element) => {
@@ -292,6 +297,15 @@ export class AppComponent implements OnInit {
         this.toggleTiles(urlIdHash);
       }
     }
+  }
+
+  ngAfterContentInit(): void {
+    let urlIdHash = Number(window.location.href.split("#")[2]);
+
+    setTimeout(() => {
+      let el = document.getElementById(`item-${urlIdHash}`);
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 500);
   }
   updateUrl() {
     window.history.replaceState(null, null, `#${this.displaySwitcher}`);
