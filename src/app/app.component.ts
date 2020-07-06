@@ -302,10 +302,12 @@ export class AppComponent implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
     let urlIdHash = Number(window.location.href.split("#")[2]);
 
-    setTimeout(() => {
-      let el = document.getElementById(`item-${urlIdHash}`);
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 500);
+    if (urlIdHash) {
+      setTimeout(() => {
+        let el = document.getElementById(`item-${urlIdHash}`);
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 500);
+    }
   }
   updateUrl() {
     window.history.replaceState(null, null, `#${this.displaySwitcher}`);
