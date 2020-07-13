@@ -133,11 +133,18 @@ export class AppComponent implements OnInit, AfterContentInit {
       id: 2,
       title: "porter.lyman.com",
       text: "This tasty snack right here.",
-      link: "https://porterlyman.herokuapp.com/",
+      link: "",
       source: "../assets/pl-icon.png",
     },
     {
       id: 3,
+      title: "clean-card",
+      text: "Open source version of this site, complete with instructions on how to host your first portfolio website for free. Also includes instructions on purchasing your first domain for $12, and hosting there, as well as how to set up free email aliasing. Powered by Angular and Heroku.",
+      link: "https://github.com/pslyman/clean-card",
+      source: "../assets/clean-cards-icon.png",
+    },
+    {
+      id: 4,
       title: "Github/pslyman",
       text: "Miscellenious contributions, side projects, and hobbies.",
       link: "https://github.com/pslyman?tab=repositories",
@@ -352,7 +359,9 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   openLinkUrl(url) {
+    if (url) {
     window.open(url, "_blank");
+    }
   }
 
   jumpToTop() {
