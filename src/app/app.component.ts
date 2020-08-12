@@ -131,7 +131,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     },
     {
       id: 2,
-      title: "porter.lyman.com",
+      title: "porterlyman.com",
       text: "This tasty snack right here.",
       link: "",
       source: "../assets/pl-icon.png",
