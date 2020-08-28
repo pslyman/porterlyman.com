@@ -145,6 +145,13 @@ export class AppComponent implements OnInit, AfterContentInit {
     },
     {
       id: 4,
+      title: "OpenTrackFit",
+      text: "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
+      link: "https://github.com/pslyman/OpenTrackFit",
+      source: "../assets/opentrackfit-icon.png",
+    },
+    {
+      id: 5,
       title: "Github/pslyman",
       text: "Miscellenious contributions, side projects, and hobbies.",
       link: "https://github.com/pslyman?tab=repositories",
