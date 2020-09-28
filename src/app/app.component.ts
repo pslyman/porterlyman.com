@@ -157,6 +157,14 @@ export class AppComponent implements OnInit, AfterContentInit {
       link: "https://github.com/pslyman?tab=repositories",
       source: "../assets/github-icon.png",
     },
+    {
+      id: 5,
+      title: "St. George Embossing",
+      text: "Made in partnership with the owner (and good friend) of St. George Embossing as a front for his business.",
+      link: "http://www.stgembossing.com",
+      source: "../assets/embossing-stg.png",
+    },
+
   ];
 
   skills = [
