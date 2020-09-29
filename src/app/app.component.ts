@@ -131,39 +131,41 @@ export class AppComponent implements OnInit, AfterContentInit {
     },
     {
       id: 2,
-      title: "porterlyman.com",
-      text: "This tasty snack right here.",
-      link: "",
-      source: "../assets/pl-icon.png",
+      title: "St. George Embossing",
+      text: "Made in partnership with the owner (and good friend) of St. George Embossing as a front for his business.",
+      link: "http://www.stgembossing.com",
+      source: "../assets/embossing-stg.png",
     },
     {
       id: 3,
-      title: "clean-card",
-      text: "Open source version of this site, complete with instructions on how to host your first portfolio website for free. Also includes instructions on purchasing your first domain for $12, and hosting there, as well as how to set up free email aliasing. Powered by Angular and Heroku.",
-      link: "https://github.com/pslyman/clean-card",
-      source: "../assets/clean-cards-icon.png",
-    },
-    {
-      id: 4,
       title: "OpenTrackFit",
       text: "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
       link: "https://github.com/pslyman/OpenTrackFit",
       source: "../assets/opentrackfit-icon.png",
     },
     {
+      id: 4,
+      title: "porterlyman.com",
+      text: "This tasty snack right here.",
+      link: "",
+      source: "../assets/pl-icon.png",
+    },
+    {
       id: 5,
+      title: "clean-card",
+      text: "Open source version of this site, complete with instructions on how to host your first portfolio website for free. Also includes instructions on purchasing your first domain for $12, and hosting there, as well as how to set up free email aliasing. Powered by Angular and Heroku.",
+      link: "https://github.com/pslyman/clean-card",
+      source: "../assets/clean-cards-icon.png",
+    },
+
+    {
+      id: 6,
       title: "Github/pslyman",
       text: "Miscellenious contributions, side projects, and hobbies.",
       link: "https://github.com/pslyman?tab=repositories",
       source: "../assets/github-icon.png",
     },
-    {
-      id: 5,
-      title: "St. George Embossing",
-      text: "Made in partnership with the owner (and good friend) of St. George Embossing as a front for his business.",
-      link: "http://www.stgembossing.com",
-      source: "../assets/embossing-stg.png",
-    },
+
 
   ];
 
