@@ -95,6 +95,8 @@ export class HomeComponent implements OnInit, AfterContentInit {
 
   title = "Porter Lyman";
 
+  nameOfRoute = "hireMe"
+
   displaySwitcher = "experience";
 
   contact = [
@@ -316,7 +318,6 @@ export class HomeComponent implements OnInit, AfterContentInit {
 
     if (this.route.snapshot.queryParamMap.get("i")) {
       this.i = Number(this.route.snapshot.queryParamMap.get("i"));
-      console.log("yes", this.i);
 
       let match = this.tiles.find((item) => item.id === this.i);
       if (!!match) {
@@ -325,17 +326,19 @@ export class HomeComponent implements OnInit, AfterContentInit {
       }
     } else {
       this.i = null;
-      console.log("nope", this.i);
+
     }
 
-    if (this.p) {
+    if (this.route.snapshot.queryParamMap.get("p")) {
       this.displaySwitcher = this.p;
     } else {
       this.displaySwitcher = "experience";
+      this.router.navigate([`/${this.nameOfRoute}`], {
+        queryParams: { p: this.displaySwitcher },
+      });
     }
 
     this.route.queryParams.subscribe((params) => {
-      console.log(params);
 
       this.p = params.p;
 
@@ -354,7 +357,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
     }
   }
   updateUrl() {
-    this.router.navigate(["/home"], {
+    this.router.navigate([`/${this.nameOfRoute}`], {
       queryParams: { p: this.displaySwitcher },
     });
   }
@@ -364,15 +367,15 @@ export class HomeComponent implements OnInit, AfterContentInit {
 
     this.toggleTiles(tileId);
 
-    this.router.navigate(["/home"], {
+    this.router.navigate([`/${this.nameOfRoute}`], {
       queryParams: { p: this.displaySwitcher },
     });
-    this.router.navigate(["/home"], {
+    this.router.navigate([`/${this.nameOfRoute}`], {
       queryParams: { i: tileId },
       queryParamsHandling: "merge",
     });
     if (this.tiles.every((element) => !element.toggled)) {
-      this.router.navigate(["/home"], {
+      this.router.navigate([`/${this.nameOfRoute}`], {
         queryParams: { p: this.displaySwitcher },
       });
       let el = document.getElementById(`item-${elementId}`);
