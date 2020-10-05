@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FrontComponent } from './front/front.component';
+import { FreechangelogComponent } from './freechangelog/freechangelog.component';
+import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FrontComponent
+    FrontComponent,
+    FreechangelogComponent,
+    PremiumchangelogComponent
   ],
   imports: [
     BrowserModule,
