@@ -347,11 +347,11 @@ export class HomeComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    let urlIdHash = Number(window.location.href.split("#")[2]);
 
-    if (urlIdHash) {
+
+    if (this.i) {
       setTimeout(() => {
-        let el = document.getElementById(`item-${urlIdHash}`);
+        let el = document.getElementById(`item-${this.i}`);
         el.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 500);
     }
