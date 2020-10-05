@@ -76,7 +76,7 @@
     >
       <div
         class="parent-skills"
-        [@cardAnimation]="tiles.length"
+        [@cardAnimation]="skills.length"
         *ngIf="displaySwitcher === 'skills'"
       >
         <div *ngFor="let skill of skills" class="skill-tile">
@@ -90,7 +90,7 @@
     <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'portfolio' }">
       <div
         class="parent"
-        [@cardAnimation]="tiles.length"
+        [@cardAnimation]="portfolio.length"
         *ngIf="displaySwitcher === 'portfolio'"
       >
         <div
@@ -116,7 +116,7 @@
     <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'contact' }">
       <div
         class="parent"
-        [@cardAnimation]="tiles.length"
+        [@cardAnimation]="contact.length"
         *ngIf="displaySwitcher === 'contact'"
       >
         <div

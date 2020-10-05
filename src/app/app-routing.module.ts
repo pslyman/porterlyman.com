@@ -1,3 +1,4 @@
+import { FrontComponent } from './front/front.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -9,7 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'hireMe', component: HomeComponent },
-  { path: '', redirectTo: '/hireMe', pathMatch: 'full'}
+  { path: 'aboutMe', component: FrontComponent },
+  { path: '', redirectTo: '/aboutMe', pathMatch: 'full'}
 ];
 
 @NgModule({

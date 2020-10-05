@@ -1,0 +1,112 @@
+<h1 class="h1-mobile">
+  {{ title }}
+</h1>
+
+<div class="content-nav">
+  <h1 class="h1-hide">
+    {{ title }}
+  </h1>
+  
+  <div class="display-switcher">
+<!--     <h4
+      [ngClass]="{ selected: displaySwitcher === 'aboutme' }"
+      (click)="displaySwitcher = 'aboutme'; jumpToTop(); updateUrl()"
+    >
+      About
+    </h4> -->
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'skills' }"
+      (click)="displaySwitcher = 'skills'; jumpToTop(); updateUrl()"
+    >
+      Skills
+    </h4>
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'portfolio' }"
+      (click)="displaySwitcher = 'portfolio'; jumpToTop(); updateUrl()"
+    >
+      Portfolio
+    </h4>
+    <h4
+      [ngClass]="{ selected: displaySwitcher === 'contact' }"
+      (click)="displaySwitcher = 'contact'; jumpToTop(); updateUrl()"
+    >
+      Contact
+    </h4>
+  </div>
+</div>
+
+<div #appContent class="appContent">
+<!--   <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'aboutme' }">
+    <div *ngIf="displaySwitcher === 'aboutme'" [@cardAnimation]="aboutme.length">
+      <div *ngFor="let item of aboutme">
+        <p>{{ item.content }}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div
+    class="justify-skills"
+    [ngClass]="{ hide: displaySwitcher !== 'skills' }"
+  >
+    <div
+      class="parent-skills"
+      [@cardAnimation]="skills.length"
+      *ngIf="displaySwitcher === 'skills'"
+    >
+      <div *ngFor="let skill of skills" class="skill-tile">
+        <div *ngIf="skill">
+          <h2>{{ skill }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'portfolio' }">
+    <div
+      class="parent"
+      [@cardAnimation]="portfolio.length"
+      *ngIf="displaySwitcher === 'portfolio'"
+    >
+      <div
+        *ngFor="let item of portfolio"
+        class="tile big portfolio-tile"
+        (click)="openLinkUrl(item.link)"
+      >
+        <div *ngIf="item.title || item.link">
+          <div [ngClass]="{ 'image-title-pairing': item.source }">
+            <div class="img-container">
+              <img *ngIf="item.source" class="image" src="{{ item.source }}" />
+            </div>
+            <div class="keep-left-please">
+              <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+              <p class="shrink-the-margins">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'contact' }">
+    <div
+      class="parent"
+      [@cardAnimation]="contact.length"
+      *ngIf="displaySwitcher === 'contact'"
+    >
+      <div
+        *ngFor="let item of contact"
+        class="tile big portfolio-tile contact-tile"
+        (click)="openLinkUrl(item.link)"
+      >
+        <div *ngIf="item.title || item.link">
+          <div class="keep-left-please">
+            <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+            <p>
+              <em>{{ item.link }}</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
