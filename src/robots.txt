@@ -1,3 +1,7 @@
 User-agent: *
 Disallow: /hireMe/
 Disallow: /hireMe
+Disallow: /assets
+Disallow: /assets/
+Disallow: /home/
+Disallow: /home
