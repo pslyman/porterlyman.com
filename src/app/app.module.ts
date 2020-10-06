@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FrontComponent } from './front/front.component';
 import { FreechangelogComponent } from './freechangelog/freechangelog.component';
 import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.component';
+import { ChangelogsComponent } from './changelogs/changelogs.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.c
     HomeComponent,
     FrontComponent,
     FreechangelogComponent,
-    PremiumchangelogComponent
+    PremiumchangelogComponent,
+    ChangelogsComponent
   ],
   imports: [
     BrowserModule,
