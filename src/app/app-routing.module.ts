@@ -31,6 +31,7 @@ const routes: Routes = [
     ],
   },
   { path: "", redirectTo: "/aboutMe", pathMatch: "full" },
+  { path: "**", redirectTo: "/aboutMe" },
 ];
 
 @NgModule({
