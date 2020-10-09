@@ -10,6 +10,7 @@ import { FreechangelogComponent } from './freechangelog/freechangelog.component'
 import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.component';
 import { ChangelogsComponent } from './changelogs/changelogs.component';
 import { OpentrackfitchangelogComponent } from './opentrackfitchangelog/opentrackfitchangelog.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OpentrackfitchangelogComponent } from './opentrackfitchangelog/opentrac
     FreechangelogComponent,
     PremiumchangelogComponent,
     ChangelogsComponent,
-    OpentrackfitchangelogComponent
+    OpentrackfitchangelogComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
-import { OpentrackfitchangelogComponent } from './opentrackfitchangelog/opentrackfitchangelog.component';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { OpentrackfitchangelogComponent } from "./opentrackfitchangelog/opentrackfitchangelog.component";
 import { ChangelogsComponent } from "./changelogs/changelogs.component";
 import { PremiumchangelogComponent } from "./premiumchangelog/premiumchangelog.component";
 import { FreechangelogComponent } from "./freechangelog/freechangelog.component";
@@ -27,11 +28,22 @@ const routes: Routes = [
       {
         path: "OpenTrackFit",
         component: OpentrackfitchangelogComponent,
-      }
+      },
+      {
+        path: "**",
+        redirectTo: "/pageNotFound",
+        pathMatch: "full",
+      },
+      {
+        path: "",
+        redirectTo: "/pageNotFound",
+        pathMatch: "full",
+      },
     ],
   },
   { path: "", redirectTo: "/aboutMe", pathMatch: "full" },
-  { path: "**", redirectTo: "/aboutMe" },
+  { path: "**", redirectTo: "/aboutMe", pathMatch: "full" },
+  { path: "pageNotFound", component: PageNotFoundComponent },
 ];
 
 @NgModule({
