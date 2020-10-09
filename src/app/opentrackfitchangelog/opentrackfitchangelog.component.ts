@@ -21,7 +21,7 @@ export class OpentrackfitchangelogComponent implements OnInit {
     {version: "1.1.7", notes: "Fixed timer calculation bug"},
     {version: "1.1.8", notes: "Apparently non metric measurements weren't working, but now it's all working fine, thanks"},
     {version: "1.1.9", notes: "Changes to animation to make them flow a little better <br/>- Fixed issue where + - button visibility was tied to reps instead of sets"},
-    {version: "1.1.10", notes: "Notification scheduled with OS so they'll notify you even if the app goes to sleep or is killed"},
+    {version: "1.1.11", notes: "Notification scheduled with OS so they'll notify you even if the app goes to sleep or is killed<br/>- More animation cleanup"},
   ]
 
   ngOnInit(): void {
