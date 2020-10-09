@@ -9,6 +9,7 @@ import { FrontComponent } from './front/front.component';
 import { FreechangelogComponent } from './freechangelog/freechangelog.component';
 import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.component';
 import { ChangelogsComponent } from './changelogs/changelogs.component';
+import { OpentrackfitchangelogComponent } from './opentrackfitchangelog/opentrackfitchangelog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChangelogsComponent } from './changelogs/changelogs.component';
     FrontComponent,
     FreechangelogComponent,
     PremiumchangelogComponent,
-    ChangelogsComponent
+    ChangelogsComponent,
+    OpentrackfitchangelogComponent
   ],
   imports: [
     BrowserModule,

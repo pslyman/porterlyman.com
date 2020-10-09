@@ -1,3 +1,4 @@
+import { OpentrackfitchangelogComponent } from './opentrackfitchangelog/opentrackfitchangelog.component';
 import { ChangelogsComponent } from "./changelogs/changelogs.component";
 import { PremiumchangelogComponent } from "./premiumchangelog/premiumchangelog.component";
 import { FreechangelogComponent } from "./freechangelog/freechangelog.component";
@@ -23,6 +24,10 @@ const routes: Routes = [
         path: "PizzaDoughPremium",
         component: PremiumchangelogComponent,
       },
+      {
+        path: "OpenTrackFit",
+        component: OpentrackfitchangelogComponent,
+      }
     ],
   },
   { path: "", redirectTo: "/aboutMe", pathMatch: "full" },
