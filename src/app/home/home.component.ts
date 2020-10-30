@@ -163,7 +163,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       id: 5,
       title: "clean-card",
       text:
-        "Open source version of this site, complete with instructions on how to host your first portfolio website for free. Also includes instructions on purchasing your first domain for $12, and hosting there, as well as how to set up free email aliasing. Powered by Angular and Heroku.",
+        "Open source version of this site with a setup and hosting guide, including buying/setting up a domain, hosting, and email aliasing. Powered by Angular and Heroku.",
       link: "https://github.com/pslyman/clean-card",
       source: "../assets/clean-cards-icon.png",
     },
