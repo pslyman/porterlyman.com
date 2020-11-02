@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       id: 1,
       title: "Pizza Dough Premium",
       text:
-        "Same full-featured product as above, but with added premium features for the extra dedicated pizza chefs.",
+        "Same full-featured product, but with added premium features for the extra dedicated pizza chefs.",
       link:
         "https://play.google.com/store/apps/details?id=pizza.dough.calculator.free",
       source: "../assets/pizza-icon.png",
