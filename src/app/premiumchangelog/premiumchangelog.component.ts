@@ -10,6 +10,7 @@ export class PremiumchangelogComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.location.href = 'http://www.products.porterlyman.com/PizzaDoughPremium/changelog';
   }
 
 }
