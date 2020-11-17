@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FrontComponent } from './front/front.component';
 import { FreechangelogComponent } from './freechangelog/freechangelog.component';
 import { PremiumchangelogComponent } from './premiumchangelog/premiumchangelog.component';
 import { ChangelogsComponent } from './changelogs/changelogs.component';
@@ -16,7 +15,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     HomeComponent,
-    FrontComponent,
     FreechangelogComponent,
     PremiumchangelogComponent,
     ChangelogsComponent,

@@ -78,6 +78,32 @@ import { Router, ActivatedRoute } from "@angular/router";
         ),
       ]),
     ]),
+    trigger("cardAnimationNoStagger", [
+      transition(":enter", [
+        animate(
+          ".5s ease-out",
+          keyframes([
+            style({
+              opacity: 0,
+              transform: "translateY(-35px) scale(1.05)",
+              offset: 0,
+            }),
+            style({ opacity: 1, transform: "translateY(0)", offset: 1 }),
+          ])
+        ),
+      ]),
+      transition(":leave", [
+        style({ opacity: 1, transform: "translateY(0)", offset: 0 }),
+        animate(
+          ".35s ease-out",
+          style({
+            opacity: 0,
+            transform: "translateY(35px) scale(1.05)",
+            offset: 1,
+          })
+        ),
+      ]),
+    ]),
   ],
 })
 export class HomeComponent implements OnInit, AfterContentInit {
@@ -93,11 +119,13 @@ export class HomeComponent implements OnInit, AfterContentInit {
   p: string;
   i: number;
 
+  experienseAllowed = false;
+
   title = "Porter Lyman";
 
-  nameOfRoute = "hireMe"
+  nameOfRoute = "aboutMe";
 
-  displaySwitcher = "experience";
+  displaySwitcher = "contact";
 
   contact = [
     {
@@ -314,6 +342,14 @@ export class HomeComponent implements OnInit, AfterContentInit {
   ];
 
   ngOnInit() {
+    if (this.router.url.includes("hireMe")) {
+      this.nameOfRoute = "hireMe";
+      this.experienseAllowed = true;
+    } else {
+      this.nameOfRoute = "aboutMe";
+      this.experienseAllowed = false;
+    }
+
     this.p = this.route.snapshot.queryParamMap.get("p");
 
     if (this.route.snapshot.queryParamMap.get("i")) {
@@ -326,12 +362,21 @@ export class HomeComponent implements OnInit, AfterContentInit {
       }
     } else {
       this.i = null;
-
     }
 
     if (this.route.snapshot.queryParamMap.get("p")) {
+      if (this.p === "experience" && !this.experienseAllowed) {
+        this.displaySwitcher = "contact";
+        this.updateUrl();
+        return;
+      }
       this.displaySwitcher = this.p;
     } else {
+      if (!this.experienseAllowed) {
+        this.displaySwitcher = "contact";
+        this.updateUrl();
+        return;
+      }
       this.displaySwitcher = "experience";
       this.router.navigate([`/${this.nameOfRoute}`], {
         queryParams: { p: this.displaySwitcher },
@@ -339,7 +384,6 @@ export class HomeComponent implements OnInit, AfterContentInit {
     }
 
     this.route.queryParams.subscribe((params) => {
-
       this.p = params.p;
 
       this.i = params.i;
@@ -347,8 +391,6 @@ export class HomeComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-
-
     if (this.i) {
       setTimeout(() => {
         let el = document.getElementById(`item-${this.i}`);
