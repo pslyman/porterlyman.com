@@ -101,7 +101,7 @@
       >
         <div *ngIf="item.title || item.link">
           <div [ngClass]="{ 'image-title-pairing': item.source }">
-            <div class="img-container">
+            <div class="img-container" *ngIf="item.source">
               <img *ngIf="item.source" class="image" src="{{ item.source }}" />
             </div>
             <div class="keep-left-please">

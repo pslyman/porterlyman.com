@@ -145,6 +145,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
     },
   ];
 
+  /* old version */
   portfolio = [
     {
       id: 0,
@@ -203,7 +204,40 @@ export class HomeComponent implements OnInit, AfterContentInit {
       link: "https://github.com/pslyman?tab=repositories",
       source: "../assets/github-icon.png",
     },
+    {
+      id: 7,
+      title: "Products",
+      text:
+        "Eventual showcase page for apps and websites.",
+      link: "http://www.products.porterlyman.com",
+    },
   ];
+
+  /* new version */
+/*   portfolio = [
+    {
+      id: 0,
+      title: "Apps",
+      text: "I build apps using Ionic/Cordova and Angular.",
+      link: "http://www.products.porterlyman.com",
+      source: "../assets/pizza-free.png",
+    },
+    {
+      id: 1,
+      title: "Websites",
+      text: "I build websites. I have experience with Angular and Vue. ",
+      link: "http://www.products.porterlyman.com",
+      source: "../assets/embossing-stg.png",
+    },
+    {
+      id: 2,
+      title: "Contributions",
+      text:
+        "I build and maintain open source projects befitting to the needs of me and others.",
+      link: "http://www.products.porterlyman.com",
+      source: "../assets/clean-cards-icon.png",
+    },
+  ]; */
 
   skills = [
     "Angular",
