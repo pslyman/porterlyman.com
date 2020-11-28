@@ -5,3 +5,4 @@ Disallow: /assets
 Disallow: /assets/
 Disallow: /changelogs/
 Disallow: /changelogs
+Sitemap: http://porterlyman.com/sitemap.xml
