@@ -3,7 +3,5 @@ Disallow: /hireMe/
 Disallow: /hireMe
 Disallow: /assets
 Disallow: /assets/
-Disallow: /home/
-Disallow: /home
 Disallow: /changelogs/
 Disallow: /changelogs
