@@ -146,7 +146,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   ];
 
   /* old version */
-  portfolio = [
+  /* portfolio = [
     {
       id: 0,
       title: "Pizza Dough Calculator",
@@ -211,21 +211,21 @@ export class HomeComponent implements OnInit, AfterContentInit {
         "Eventual showcase page for apps and websites.",
       link: "http://www.products.porterlyman.com",
     },
-  ];
+  ]; */
 
   /* new version */
-/*   portfolio = [
+  portfolio = [
     {
       id: 0,
       title: "Apps",
-      text: "I build apps using Ionic/Cordova and Angular.",
+      text: "I build apps using Ionic/Cordova, Angular, and Vue.",
       link: "http://www.products.porterlyman.com",
       source: "../assets/pizza-free.png",
     },
     {
       id: 1,
       title: "Websites",
-      text: "I build websites. I have experience with Angular and Vue. ",
+      text: "I build websites. I have experience with Angular, Vue, and PWAs. ",
       link: "http://www.products.porterlyman.com",
       source: "../assets/embossing-stg.png",
     },
@@ -237,7 +237,14 @@ export class HomeComponent implements OnInit, AfterContentInit {
       link: "http://www.products.porterlyman.com",
       source: "../assets/clean-cards-icon.png",
     },
-  ]; */
+    {
+      id: 3,
+      title: "Products",
+      text:
+        "Click here to see my full showcase",
+      link: "http://www.products.porterlyman.com",
+    },
+  ];
 
   skills = [
     "Angular",
