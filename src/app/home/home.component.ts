@@ -281,6 +281,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
     "TFS",
     "Jira",
     "ADO",
+    "PWAs",
     "And more...",
   ];
 
