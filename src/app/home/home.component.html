@@ -88,13 +88,9 @@
     </div>
   </div>
 
-  <div class="justify" [ngClass]="{ hide: displaySwitcher !== 'portfolio' }">
-    <div
-      class="parent"
-      [@cardAnimation]="portfolio.length"
-      *ngIf="displaySwitcher === 'portfolio'"
-    >
-      <div
+  <div class="portfolios" [ngClass]="{ hide: displaySwitcher !== 'portfolio' }">
+    <div *ngIf="displaySwitcher === 'portfolio'">
+      <!-- <div
         *ngFor="let item of portfolio"
         class="tile big portfolio-tile"
         (click)="openLinkUrl(item.link)"
@@ -107,6 +103,142 @@
             <div class="keep-left-please">
               <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
               <p class="shrink-the-margins">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <h2 class="h1-mobile-dif" [@cardAnimationNoStagger]>Sites</h2>
+
+      <div class="content-nav-dif">
+        <h2 class="h1-hide-dif" [@cardAnimationNoStagger]>Sites</h2>
+      </div>
+
+      <div>
+        <div class="justify-dif">
+          <div class="parent-dif" [@cardAnimation]="portfolioSites.length">
+            <div
+              *ngFor="let item of portfolioSites"
+              class="tile-dif big-dif portfolio-tile-dif"
+              (click)="openLinkUrl(item.link)"
+            >
+              <div *ngIf="item.title || item.link">
+                <div [ngClass]="{ 'image-title-pairing': item.source }">
+                  <div class="img-container" *ngIf="item.source">
+                    <img
+                      *ngIf="item.source"
+                      class="image"
+                      src="{{ item.source }}"
+                    />
+                  </div>
+                  <div class="keep-left-please">
+                    <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+                    <p class="shrink-the-margins">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="h1-mobile-dif" [@cardAnimationNoStagger]>Apps</h2>
+
+      <div class="content-nav-dif" [@cardAnimationNoStagger]>
+        <h2 class="h1-hide-dif">Apps</h2>
+      </div>
+
+      <div>
+        <div class="justify-dif">
+          <div class="parent-dif" [@cardAnimation]="portfolioApps.length">
+            <div
+              *ngFor="let item of portfolioApps"
+              class="tile big portfolio-tile"
+              (click)="openLinkUrl(item.link)"
+            >
+              <div *ngIf="item.title || item.link">
+                <div [ngClass]="{ 'image-title-pairing': item.source }">
+                  <div class="img-container" *ngIf="item.source">
+                    <img
+                      *ngIf="item.source"
+                      class="image"
+                      src="{{ item.source }}"
+                    />
+                  </div>
+                  <div class="keep-left-please">
+                    <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+                    <p class="shrink-the-margins">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="h1-mobile-dif" [@cardAnimationNoStagger]>Misc</h2>
+
+      <div class="content-nav-dif">
+        <h2 class="h1-hide-dif" [@cardAnimationNoStagger]>Misc</h2>
+      </div>
+
+      <div>
+        <div class="justify-dif">
+          <div class="parent-dif" [@cardAnimation]="portfolioMisc.length">
+            <div
+              *ngFor="let item of portfolioMisc"
+              class="tile big portfolio-tile"
+              (click)="openLinkUrl(item.link)"
+            >
+              <div *ngIf="item.title || item.link">
+                <div [ngClass]="{ 'image-title-pairing': item.source }">
+                  <div class="img-container" *ngIf="item.source">
+                    <img
+                      *ngIf="item.source"
+                      class="image"
+                      src="{{ item.source }}"
+                    />
+                  </div>
+                  <div class="keep-left-please">
+                    <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+                    <p class="shrink-the-margins">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="h1-mobile-dif" [@cardAnimationNoStagger]>Services</h2>
+
+      <div class="content-nav-dif" [@cardAnimationNoStagger]>
+        <h2 class="h1-hide-dif">Services</h2>
+      </div>
+
+      <div>
+        <div class="justify-dif">
+          <div class="parent-dif" [@cardAnimation]="portfolioServices.length">
+            <div
+              *ngFor="let item of portfolioServices"
+              class="tile-dif big-dif portfolio-tile-dif"
+              (click)="openLinkUrl(item.link)"
+            >
+              <div *ngIf="item.title || item.link">
+                <div [ngClass]="{ 'image-title-pairing': item.source }">
+                  <div class="img-container" *ngIf="item.source">
+                    <img
+                      *ngIf="item.source"
+                      class="image"
+                      src="{{ item.source }}"
+                    />
+                  </div>
+                  <div class="keep-left-please">
+                    <h2 class="h2-mobile-compatible">{{ item.title }}</h2>
+                    <p class="shrink-the-margins">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

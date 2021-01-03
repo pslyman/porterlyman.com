@@ -214,7 +214,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   ]; */
 
   /* new version */
-  portfolio = [
+  /* portfolio = [
     {
       id: 0,
       title: "Apps",
@@ -244,7 +244,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
         "Click here to see my full showcase",
       link: "http://www.products.porterlyman.com",
     },
-  ];
+  ]; */
 
   skills = [
     "Angular",
@@ -380,6 +380,85 @@ export class HomeComponent implements OnInit, AfterContentInit {
       big: false,
       toggled: false,
       hide: false,
+    },
+  ];
+
+  portfolioServices = [
+    {
+      title: "Builder",
+      text:
+        "I build sites and mobile apps. Click for more information.",
+      link: "http://www.products.porterlyman.com"/* ,
+      source: "", */
+    },
+  ];
+
+  portfolioApps = [
+    {
+      title: "Pizza Dough Calculator",
+      text:
+        "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
+      link: "http://www.products.porterlyman.com/PizzaDoughCalculator/about",
+      source: "../assets/pizza-free.png",
+    },
+    {
+      title: "Pizza Dough Premium",
+      text:
+        "Same full-featured product, but with added premium features for the extra dedicated pizza chefs.",
+        link: "http://www.products.porterlyman.com/PizzaDoughPremium/about",
+      source: "../assets/pizza-icon.png",
+    },
+
+    {
+      title: "OpenTrackFit",
+      text:
+        "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
+        link: "http://www.products.porterlyman.com/OpenTrackFit/about",
+      source: "../assets/opentrackfit-icon.png",
+    },
+  ];
+
+  portfolioSites = [
+    {
+      title: "St. George Embossing",
+      text:
+        "Made in partnership with the owner (and good friend) of St. George Embossing as a front for his business.",
+      link: "http://www.stgembossing.com",
+      source: "../assets/embossing-stg.png",
+    },
+    {
+      title: "porterlyman.com",
+      text: "Of which this is a subdomain of.",
+      link: "http://www.porterlyman.com",
+      source: "../assets/pl-icon.png",
+    },
+    {
+      title: "devlay.com",
+      text: "One of the last short, readable domains. Used for subdomains with hosted sites I make for people.",
+      link: "https://www.devlay.com",
+      source: "../assets/devlay-icon.png",
+    },
+  ];
+
+  portfolioMisc = [
+    {
+      title: "clean-card",
+      text:
+        "Open source version of porterlyman.com with a setup and hosting guide, including buying/setting up a domain, hosting, and email aliasing. Powered by Angular and Vercel (or Heroku).",
+      link: "https://github.com/pslyman/clean-card",
+      source: "../assets/clean-cards-icon.png",
+    },
+    {
+      title: "pizza.devlay.com",
+      text: "A website made by my brother as a recreation of the flash dough tools, and I contribute to the codebase. His site inspired my apps.",
+      link: "https://www.pizza.devlay.com",
+      source: "../assets/pizza-site-icon.png",
+    },
+    {
+      title: "Github/pslyman",
+      text: "Miscellenious contributions, side projects, and hobbies.",
+      link: "https://github.com/pslyman?tab=repositories",
+      source: "../assets/github-icon.png",
     },
   ];
 
