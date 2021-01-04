@@ -119,7 +119,7 @@
           <div class="parent-dif" [@cardAnimation]="portfolioSites.length">
             <div
               *ngFor="let item of portfolioSites"
-              class="tile-dif big-dif portfolio-tile-dif"
+              class="tile big portfolio-tile"
               (click)="openLinkUrl(item.link)"
             >
               <div *ngIf="item.title || item.link">
@@ -221,7 +221,7 @@
           <div class="parent-dif" [@cardAnimation]="portfolioServices.length">
             <div
               *ngFor="let item of portfolioServices"
-              class="tile-dif big-dif portfolio-tile-dif"
+              class="tile big portfolio-tile"
               (click)="openLinkUrl(item.link)"
             >
               <div *ngIf="item.title || item.link">

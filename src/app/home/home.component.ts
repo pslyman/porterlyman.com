@@ -386,10 +386,9 @@ export class HomeComponent implements OnInit, AfterContentInit {
   portfolioServices = [
     {
       title: "Builder",
-      text:
-        "I build sites and mobile apps. Click for more information.",
-      link: "http://www.products.porterlyman.com"/* ,
-      source: "", */
+      text: "I build sites and mobile apps. Click for more information.",
+      link: "http://www.products.porterlyman.com" /* ,
+      source: "", */,
     },
   ];
 
@@ -405,7 +404,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       title: "Pizza Dough Premium",
       text:
         "Same full-featured product, but with added premium features for the extra dedicated pizza chefs.",
-        link: "http://www.products.porterlyman.com/PizzaDoughPremium/about",
+      link: "http://www.products.porterlyman.com/PizzaDoughPremium/about",
       source: "../assets/pizza-icon.png",
     },
 
@@ -413,7 +412,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       title: "OpenTrackFit",
       text:
         "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
-        link: "http://www.products.porterlyman.com/OpenTrackFit/about",
+      link: "http://www.products.porterlyman.com/OpenTrackFit/about",
       source: "../assets/opentrackfit-icon.png",
     },
   ];
@@ -434,7 +433,8 @@ export class HomeComponent implements OnInit, AfterContentInit {
     },
     {
       title: "devlay.com",
-      text: "One of the last short, readable domains. Used for subdomains with hosted sites I make for people.",
+      text:
+        "One of the last short, readable domains. Used for subdomains with hosted sites I make for people.",
       link: "https://www.devlay.com",
       source: "../assets/devlay-icon.png",
     },
@@ -450,7 +450,8 @@ export class HomeComponent implements OnInit, AfterContentInit {
     },
     {
       title: "pizza.devlay.com",
-      text: "A website made by my brother as a recreation of the flash dough tools, and I contribute to the codebase. His site inspired my apps.",
+      text:
+        "A website made by my brother as a recreation of the flash dough tools, and I contribute to the codebase. His site inspired my apps.",
       link: "https://www.pizza.devlay.com",
       source: "../assets/pizza-site-icon.png",
     },
@@ -569,7 +570,11 @@ export class HomeComponent implements OnInit, AfterContentInit {
 
   openLinkUrl(url) {
     if (url) {
-      window.open(url, "_blank");
+      if (url.includes("porterlyman")) {
+        window.location.href = url;
+      } else {
+        window.open(url, "_blank");
+      }
     }
   }
 
