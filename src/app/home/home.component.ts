@@ -427,9 +427,9 @@ export class HomeComponent implements OnInit, AfterContentInit {
     },
     {
       title: "porterlyman.com",
-      text: "Of which this is a subdomain of.",
+      text: "You're on it right now!",
       link: "http://www.porterlyman.com",
-      source: "../assets/pl-icon.png",
+      source: "",
     },
     {
       title: "devlay.com",
