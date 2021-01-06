@@ -428,8 +428,8 @@ export class HomeComponent implements OnInit, AfterContentInit {
     {
       title: "porterlyman.com",
       text: "You're on it right now!",
-      link: "http://www.porterlyman.com",
-      source: "",
+      link: "",
+      source: "../assets/pl-icon.png",
     },
     {
       title: "devlay.com",
