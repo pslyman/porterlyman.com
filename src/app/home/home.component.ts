@@ -107,7 +107,7 @@ import { Router, ActivatedRoute } from "@angular/router";
   ],
 })
 export class HomeComponent implements OnInit, AfterContentInit {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) { }
   @HostListener("document:click", ["$event"])
   documentClick(event: MouseEvent) {
     this.tiles.forEach((element) => {
@@ -407,13 +407,19 @@ export class HomeComponent implements OnInit, AfterContentInit {
       link: "http://www.products.porterlyman.com/PizzaDoughPremium/about",
       source: "../assets/pizza-icon.png",
     },
-
     {
       title: "OpenTrackFit",
       text:
         "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
       link: "http://www.products.porterlyman.com/OpenTrackFit/about",
       source: "../assets/opentrackfit-icon.png",
+    },
+    {
+      title: "SocialLinker",
+      text:
+        "Looking to cut your social media addiction? Use all of your social media apps in one unified location.",
+      link: "http://www.products.porterlyman.com/SocialLinker/about",
+      source: "../assets/sociallinker-icon.png",
     },
   ];
 
