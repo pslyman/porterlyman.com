@@ -397,28 +397,28 @@ export class HomeComponent implements OnInit, AfterContentInit {
       title: "Pizza Dough Calculator",
       text:
         "Passion product, using 20 year-old formulas and bringing the well known app into your hands. The original version. ",
-      link: "http://www.products.porterlyman.com/PizzaDoughCalculator/about",
+      link: "https://www.products.porterlyman.com/PizzaDoughCalculator/about",
       source: "../assets/pizza-free.png",
     },
     {
       title: "Pizza Dough Premium",
       text:
         "Same full-featured product, but with added premium features for the extra dedicated pizza chefs.",
-      link: "http://www.products.porterlyman.com/PizzaDoughPremium/about",
+      link: "https://www.products.porterlyman.com/PizzaDoughPremium/about",
       source: "../assets/pizza-icon.png",
     },
     {
       title: "OpenTrackFit",
       text:
         "Open Source app project for workout tracking. Includes in-app timers, prioritization, and other useful features for tracking.",
-      link: "http://www.products.porterlyman.com/OpenTrackFit/about",
+      link: "https://www.products.porterlyman.com/OpenTrackFit/about",
       source: "../assets/opentrackfit-icon.png",
     },
     {
       title: "SocialLinker",
       text:
         "Looking to cut your social media addiction? Use all of your social media apps in one unified location.",
-      link: "http://www.products.porterlyman.com/SocialLinker/about",
+      link: "https://www.products.porterlyman.com/SocialLinker/about",
       source: "../assets/sociallinker-icon.png",
     },
   ];
@@ -428,7 +428,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
       title: "St. George Embossing",
       text:
         "Made in partnership with the owner (and good friend) of St. George Embossing as a front for his business.",
-      link: "http://www.stgembossing.com",
+      link: "https://www.stgembossing.com",
       source: "../assets/embossing-stg.png",
     },
     {
