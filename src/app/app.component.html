@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div class="parent-container">
+  <div class="center-column">
+    <h1>Porter Lyman</h1>
+
+    <div *ngFor="let job of jobHistory">
+      <p><strong>{{ job.title }}</strong> at <strong>{{ job.location }}</strong></p>
+      <p class="faded-text">{{ job.dateRange }}</p>
+      <p>{{ job.description }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+<router-outlet />

@@ -1,8 +1,0 @@
-User-agent: *
-Disallow: /hireMe/
-Disallow: /hireMe
-Disallow: /assets
-Disallow: /assets/
-Disallow: /changelogs/
-Disallow: /changelogs
-Sitemap: http://porterlyman.com/sitemap.xml

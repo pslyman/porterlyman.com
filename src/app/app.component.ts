@@ -1,15 +1,15 @@
-import {
-  Component,
-  OnInit,
-  HostListener,
-  AfterContentInit,
-} from "@angular/core";
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { jobHistory } from './constants/resume.constants';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "app-root",
-  templateUrl: `./app.component.html`,
-  styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, CommonModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  ngOnInit() {}
+export class AppComponent {
+  jobHistory = jobHistory;
 }
