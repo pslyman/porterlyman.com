@@ -26,4 +26,6 @@
 </div>
 
 <!-- Skills -->
-<div></div>
+<div class="wordCloud-parent" [class.hide-canvas]="type !== 'Skills'" #wordCloudCanvasParent>
+  <canvas class="wordCloud" #wordCloudCanvas></canvas>
+</div>

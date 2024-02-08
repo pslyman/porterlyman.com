@@ -86,21 +86,3 @@ export const jobHistory: AllJobsHistory = {
   ],
 };
 
-export const skills: SkillsObject = {
-  development: [
-    'Proficient with Typescript, Javascript (ES6), Angular, Vue, React (and React-Native), C#, Ionic/Cordova, Redux, Transact SQL.',
-    'Proficient with SQL Server, PostgreSQL, .NET Core, Node, MySQL, and Fluent Migrator.',
-    'Proficient with Linux environments, Linux containers, and with virtualization software.',
-    'Experienced with Docker, Express, and Power-Bi integrations.',
-    'Experienced with ETL processes, including automated ETL scripts.',
-  ],
-  qa: [
-    'Proficient with Protractor, Cypress, Appium, and Selenium, and building e2e and unit tests with Jasmine/Karma.',
-    'Experienced with working in TFS, Jira, ADO, and Confluence as part of an Agile working environment for tracking stories and bugs, keeping developers and QAs working closely together especially within test-driven development.',
-    'Familiar with automation software, including remote control clients and batch scripts.',
-  ],
-  other: [
-    'Experienced as a mentor, and coached several interns who went on to be hired full-time within the company and externally. Have also mentored outside of the job, and helped people start their careers in tech.',
-    'Ability to integrate and work well with remote and onsite team members.',
-  ],
-};

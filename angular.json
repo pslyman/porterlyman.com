@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "porter-lyman-vanity": {
+    "porter-lyman-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/porter-lyman-vanity",
+            "outputPath": "dist/porter-lyman-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "porter-lyman-vanity:build:production"
+              "buildTarget": "porter-lyman-website:build:production"
             },
             "development": {
-              "buildTarget": "porter-lyman-vanity:build:development"
+              "buildTarget": "porter-lyman-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "porter-lyman-vanity:build"
+            "buildTarget": "porter-lyman-website:build"
           }
         },
         "test": {

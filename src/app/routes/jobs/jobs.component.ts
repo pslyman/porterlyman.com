@@ -1,10 +1,18 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { JobHistoryComponent } from '../../components/job-history/job-history.component';
 import { CommonModule } from '@angular/common';
 import { jobHistory } from '../../constants/resume.constants';
 import { ActivatedRoute, Router } from '@angular/router';
 import { staggerAnimation } from '../../constants/animations.constants';
-
+import { skills } from '../../constants/skills.constants';
+import WordCloud from 'wordcloud';
 
 @Component({
   selector: 'app-jobs',
@@ -14,7 +22,15 @@ import { staggerAnimation } from '../../constants/animations.constants';
   styleUrl: './jobs.component.scss',
   animations: [staggerAnimation],
 })
-export class JobsComponent implements OnInit {
+export class JobsComponent implements AfterViewInit {
+  @ViewChild('wordCloudCanvas') wordCloudCanvas!: ElementRef;
+  @ViewChild('wordCloudCanvasParent') wordCloudCanvasParent!: ElementRef;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.resizeCanvas();
+  }
+
   router = inject(Router);
   activatedRoute = inject(ActivatedRoute);
   type = 'Career';
@@ -27,15 +43,39 @@ export class JobsComponent implements OnInit {
       if (!this.type) {
         this.toggleType('Career');
       }
+
+      setTimeout(() => {
+        this.resizeCanvas();
+        this.renderCanvas();
+      });
     });
   }
 
   allJobHistory = jobHistory;
   jobHistoryKeys = Object.keys(jobHistory);
 
-  ngOnInit(): void {
-    console.log(this.allJobHistory);
-    console.log(this.jobHistoryKeys);
+  ngAfterViewInit() {
+    this.resizeCanvas();
+    this.renderCanvas();
+  }
+
+  resizeCanvas() {
+    this.wordCloudCanvas.nativeElement.width =
+      this.wordCloudCanvasParent.nativeElement.clientWidth;
+    this.wordCloudCanvas.nativeElement.height =
+      this.wordCloudCanvasParent.nativeElement.clientHeight;
+    this.renderCanvas();
+  }
+
+  renderCanvas() {
+    WordCloud(this.wordCloudCanvas.nativeElement, {
+      list: skills,
+      weightFactor: 5,
+      gridSize: 20,
+      color: '#e1e1e1',
+      backgroundColor: '#1a1a1a',
+      rotateRatio: 0.3,
+    });
   }
 
   toggleType(type: string): void {
