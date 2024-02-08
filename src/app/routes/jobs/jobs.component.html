@@ -8,12 +8,22 @@
       >[{{ button }}]</a
     >
   </div>
+  <a
+    [class.active-link]="type === 'Skills'"
+    class="inactive-link"
+    routerLinkActive="active-link"
+    (click)="toggleType('Skills')"
+    >[Skills]</a
+  >
 </div>
-<div
-  *ngIf="allJobHistory[type].length > 0"
-  [@stagger]="allJobHistory[type].length"
->
-  <div *ngFor="let job of allJobHistory[type]">
-    <job-history-component [job]="job"></job-history-component>
+<br />
+<div *ngIf="allJobHistory[type] && allJobHistory[type].length > 0">
+  <div [@stagger]="allJobHistory[type].length">
+    <div *ngFor="let job of allJobHistory[type]">
+      <job-history-component [job]="job"></job-history-component>
+    </div>
   </div>
 </div>
+
+<!-- Skills -->
+<div></div>

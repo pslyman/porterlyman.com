@@ -3,16 +3,8 @@ import { JobHistoryComponent } from '../../components/job-history/job-history.co
 import { CommonModule } from '@angular/common';
 import { jobHistory } from '../../constants/resume.constants';
 import { ActivatedRoute, Router } from '@angular/router';
-import {
-  trigger,
-  transition,
-  query,
-  stagger,
-  animateChild,
-  style,
-  animate,
-  keyframes,
-} from '@angular/animations';
+import { staggerAnimation } from '../../constants/animations.constants';
+
 
 @Component({
   selector: 'app-jobs',
@@ -20,19 +12,7 @@ import {
   imports: [JobHistoryComponent, CommonModule],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.scss',
-  animations: [
-    trigger('stagger', [
-      transition('* => *', [
-        // this hides everything right away
-        query(':enter', style({ opacity: 0 })),
-
-        // starts to animate things with a stagger in between
-        query(':enter', stagger(50, [animate(250, style({ opacity: 1 }))]), {
-          delay: 0,
-        }),
-      ]),
-    ]),
-  ],
+  animations: [staggerAnimation],
 })
 export class JobsComponent implements OnInit {
   router = inject(Router);
@@ -43,6 +23,10 @@ export class JobsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params) => {
       const type = params['type'];
       this.type = type;
+
+      if (!this.type) {
+        this.toggleType('Career');
+      }
     });
   }
 

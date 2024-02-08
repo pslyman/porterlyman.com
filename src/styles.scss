@@ -1,23 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: "Mono";
-    src: url("assets/IBMPlexMono-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Mono";
+  src: url("assets/IBMPlexMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Mono-Italics";
-    src: url("assets/IBMPlexMono-Italic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Mono-Italics";
+  src: url("assets/IBMPlexMono-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Mono-Bold";
-    src: url("assets/IBMPlexMono-Bold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Mono-Bold";
+  src: url("assets/IBMPlexMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 h1,
@@ -30,42 +30,51 @@ span,
 p,
 a,
 li {
-    font-family: "Mono";
-    color: #e1e1e1;
+  font-family: "Mono";
+  color: #e1e1e1;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 strong {
-    font-family: "Mono-Bold";
+  font-family: "Mono-Bold";
 }
 
 em {
-    font-family: "Mono-Italics";
+  font-family: "Mono-Italics";
 }
 
 html,
 body {
-    background-color: #1a1a1a;
-    margin: 0;
-    padding: 0;
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
 }
 
 .header-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .inactive-link {
-    opacity: 50%;
-    text-decoration: none;
-    cursor: pointer;
+  opacity: 50%;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .inactive-link:hover {
-    opacity: 100%;
-    text-decoration: underline;
+  opacity: 100%;
+  text-decoration: underline;
 }
 
 .active-link {
-    opacity: 100%;
+  opacity: 100%;
+}
+
+.faded-text {
+  opacity: 70%;
 }

@@ -7,14 +7,11 @@
 }
 
 .center-column {
-    width: 40%;
+    width: 50%;
+    max-width: 800px;
     h1 {
         text-align: center;
     }
-}
-
-.faded-text {
-    opacity: 70%;
 }
 
 @media (max-width: 1024px) {
@@ -32,6 +29,6 @@
 @media (max-width: 480px) {
     .center-column {
         width: 100%;
-        padding: 5px;
+        padding: 10px;
     }
 }

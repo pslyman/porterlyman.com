@@ -1,0 +1,10 @@
+<div *ngIf="portfolioList && portfolioList.length > 0">
+<div class="centered-links" [@stagger]="portfolioList.length">
+  <div *ngFor="let portfolio of portfolioList">
+    <a class="portfolio-link" href="{{ portfolio.url }}" target="_blank"
+      >[{{ portfolio.title }}]</a
+    >
+    <p>{{ portfolio.description }}</p>
+  </div>
+</div>
+</div>
