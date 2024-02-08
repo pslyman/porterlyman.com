@@ -27,9 +27,21 @@ export class JobsComponent implements AfterViewInit {
   @ViewChild('wordCloudCanvasParent') wordCloudCanvasParent!: ElementRef;
 
   @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.resizeCanvas();
+  onResize(event: Event) {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+  
+    // Check if the change is primarily horizontal (width change)
+    if (windowWidth !== this.lastWindowWidth) {
+      // Your logic for handling horizontal resize here
+      this.resizeCanvas();
+    }
+  
+    // Store the current window width for comparison in the next resize event
+    this.lastWindowWidth = windowWidth;
   }
+  
+  lastWindowWidth = 0;
 
   router = inject(Router);
   activatedRoute = inject(ActivatedRoute);
