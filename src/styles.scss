@@ -1,21 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: 'Mono';
-    src: url('assets/IBMPlexMono-Regular.ttf') format('truetype');
+    font-family: "Mono";
+    src: url("assets/IBMPlexMono-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Mono-Italics';
-    src: url('assets/IBMPlexMono-Italic.ttf') format('truetype');
+    font-family: "Mono-Italics";
+    src: url("assets/IBMPlexMono-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Mono-Bold';
-    src: url('assets/IBMPlexMono-Bold.ttf') format('truetype');
+    font-family: "Mono-Bold";
+    src: url("assets/IBMPlexMono-Bold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -28,9 +28,10 @@ h5,
 h6,
 span,
 p,
+a,
 li {
     font-family: "Mono";
-    color: #e1e1e1
+    color: #e1e1e1;
 }
 
 strong {
@@ -46,4 +47,25 @@ body {
     background-color: #1a1a1a;
     margin: 0;
     padding: 0;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inactive-link {
+    opacity: 50%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.inactive-link:hover {
+    opacity: 100%;
+    text-decoration: underline;
+}
+
+.active-link {
+    opacity: 100%;
 }

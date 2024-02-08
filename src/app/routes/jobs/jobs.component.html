@@ -1,0 +1,19 @@
+<div class="secondary-buttons">
+  <div *ngFor="let button of jobHistoryKeys">
+    <a
+      [class.active-link]="type === button"
+      class="inactive-link"
+      routerLinkActive="active-link"
+      (click)="toggleType(button)"
+      >[{{ button }}]</a
+    >
+  </div>
+</div>
+<div
+  *ngIf="allJobHistory[type].length > 0"
+  [@stagger]="allJobHistory[type].length"
+>
+  <div *ngFor="let job of allJobHistory[type]">
+    <job-history-component [job]="job"></job-history-component>
+  </div>
+</div>

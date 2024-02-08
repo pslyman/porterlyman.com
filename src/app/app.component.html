@@ -2,14 +2,28 @@
   <div class="center-column">
     <h1>Porter Lyman</h1>
 
-    <div *ngFor="let job of jobHistory">
-      <p><strong>{{ job.title }}</strong> at <strong>{{ job.location }}</strong></p>
-      <p class="faded-text">{{ job.dateRange }}</p>
-      <p>{{ job.description }}</p>
+    <div class="header-buttons">
+      <a
+        [routerLink]="['/job-history']"
+        class="inactive-link"
+        routerLinkActive="active-link"
+        >[Job History]</a
+      >
+      <a
+        [routerLink]="['/portfolio']"
+        class="inactive-link"
+        routerLinkActive="active-link"
+        >[Portfolio]</a
+      >
+      <a
+        [routerLink]="['/contact']"
+        class="inactive-link"
+        routerLinkActive="active-link"
+        >[Contact]</a
+      >
     </div>
+    <router-outlet />
   </div>
 </div>
 
 
-
-<router-outlet />
