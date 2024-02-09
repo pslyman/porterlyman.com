@@ -1,7 +1,11 @@
 <div *ngIf="contactInfo && contactInfo.length > 0">
   <div class="centered-links" [@stagger]="contactInfo.length">
     <div *ngFor="let contact of contactInfo">
-      <a class="contact-link" href="{{ contact.url }}" target="_blank"
+      <a
+        class="contact-link"
+        href="{{ contact.url }}"
+        target="_blank"
+        rel="{{ contact.rel || '' }}"
         >[{{ contact.title }}]</a
       >
     </div>

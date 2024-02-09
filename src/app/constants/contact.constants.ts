@@ -10,5 +10,11 @@ export const contactInfo: ContactList[] = [
     id: 1,
     title: 'GitHub',
     url: 'https://github.com/pslyman'
+  },
+  {
+    id: 2,
+    title: 'Mastodon',
+    url: 'https://vmst.io/@plym',
+    rel: 'me'
   }
 ];
