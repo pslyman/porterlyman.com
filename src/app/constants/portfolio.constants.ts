@@ -7,14 +7,27 @@ export const portfolioList = [
   },
   {
     id: 1,
+    title: 'St. George Embossing',
+    url: 'https://www.stgembossing.com/home',
+    description:
+      'A simple website I made for a local business years ago, and have maintained since.',
+  },
+  {
+    id: 2,
     title: 'porterlyman.com',
     url: 'https://github.com/pslyman/porterlyman.com',
     description: `You're here now. A website business card.`,
   },
   {
-    id: 2,
+    id: 3,
     title: 'products.porterlyman.com',
     url: 'https://github.com/pslyman/products.porterlyman',
     description: `Used to manage changelogs and other information for my products.`,
+  },
+  {
+    id: 4,
+    title: 'Overview of the formulas in Pizza Dough Calculator',
+    url: 'https://github.com/pslyman/Pizza-Dough-Calculator',
+    description: `An overview of poignant sections of the calculator service that gives the Pizza Dough Calculator its power. In particular the formulas and methods around value calculations.`,
   },
 ];
