@@ -73,7 +73,7 @@ export const jobHistory: AllJobsHistory = {
         'Co-developed an estimated ROI calculator web app to draw interest from clients. Wrote from scratch using Angular',
     },
   ],
-  'Projects': [
+  'Personal': [
     {
       id: 0,
       title: 'Software Engineer and Publisher',
