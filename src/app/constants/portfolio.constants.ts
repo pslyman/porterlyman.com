@@ -30,4 +30,10 @@ export const portfolioList = [
     url: 'https://github.com/pslyman/Pizza-Dough-Calculator',
     description: `An overview of poignant sections of the calculator service that gives the Pizza Dough Calculator its power. In particular the formulas and methods around value calculations.`,
   },
+  {
+    id: 5,
+    title: 'Angular Flash Cards for Language Learning',
+    url: 'https://github.com/pslyman/Angular-Flash-Cards-for-Language-Learning',
+    description: `The FOSS app I was using to manage my flash cards was great, but locked to the platform I was using. I whipped this up over a weekend to use instead from any platform, and kept it easy to update when needed.`,
+  },
 ];
