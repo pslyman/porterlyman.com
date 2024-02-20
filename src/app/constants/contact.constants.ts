@@ -16,5 +16,10 @@ export const contactInfo: ContactList[] = [
     title: 'Mastodon',
     url: 'https://vmst.io/@plym',
     rel: 'me'
+  },
+  {
+    id: 3,
+    title: 'dev.to',
+    url: 'https://dev.to/plym',
   }
 ];
