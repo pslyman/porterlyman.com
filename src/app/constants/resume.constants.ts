@@ -52,7 +52,7 @@ export const jobHistory: AllJobsHistory = {
       id: 0,
       title: 'Mentor in Software Engineering',
       location: 'Thinkful',
-      dateRange: 'January 2022 – Current',
+      dateRange: 'January 2022 – 2024',
       description:
         'Mentor for students in their full stack cohorts consisting of web fundamentals, React, Node, Postgres, and more - helping them get across the finish line.',
     },
@@ -72,6 +72,13 @@ export const jobHistory: AllJobsHistory = {
       description:
         'Co-developed an estimated ROI calculator web app to draw interest from clients. Wrote from scratch using Angular',
     },
+    {
+      id: 3,
+      title: 'CTO and Software Engineer',
+      location: 'Wyvyrn',
+      dateRange: '2022 - Present',
+      description: "Made architect decisions and assisted in development decisions with frontend and backend regarding the Wyvyrn project. Wyvyrn is a digital toolset for TTRPG (D&D and more) players and dungeon masters. We launched a Kickstarter last summer. See wyvyrn.com to learn more."
+    }
   ],
   'Personal': [
     {
