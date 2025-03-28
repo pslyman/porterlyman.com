@@ -8,14 +8,21 @@ export const jobHistory: AllJobsHistory = {
   'Career': [
     {
       id: 0,
+      title: "Technical Software Engineering Manager",
+      location: "Cricut",
+      dateRange: "March 2025 - Present",
+      description: ""
+    },
+    {
+      id: 1,
       title: 'Senior Software Engineer | Team Lead',
       location: 'Republic Services',
-      dateRange: 'October 2022 – Current',
+      dateRange: 'October 2022 – March 2025',
       description:
         'Rebuilt checkout and receipt systems, which contained financial and other sensitive data. Worked on their mono-repo conversions, including large component migrations and MFEs. Work included Node, NX, and heavy Angular knowledge.',
     },
     {
-      id: 1,
+      id: 2,
       title: 'Software Engineer',
       location: 'Health Catalyst',
       dateRange: 'January 2019 – October 2022',
@@ -23,7 +30,7 @@ export const jobHistory: AllJobsHistory = {
         'Front-end and back-end for budgeting, labor management, and reporting software. Day to day work included Angular, .NET, and heavy database work.',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Software Quality Assurance Engineer',
       location: 'Modere',
       dateRange: 'September 2018 – January 2019',

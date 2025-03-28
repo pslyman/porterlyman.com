@@ -59,4 +59,6 @@ export const skills: SkillsList = [
   ['Flexbox', 2],
   ['Mentor', 20],
   ['Team Lead', 20],
+  ['Manager', 8],
+  ['Electron', 10]
 ];
