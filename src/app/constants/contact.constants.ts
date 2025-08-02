@@ -1,4 +1,4 @@
-import { ContactList } from "../interfaces/contact.interface";
+import { ContactList } from '../interfaces/contact.interface';
 
 export const contactInfo: ContactList[] = [
   {
@@ -9,17 +9,6 @@ export const contactInfo: ContactList[] = [
   {
     id: 1,
     title: 'GitHub',
-    url: 'https://github.com/pslyman'
+    url: 'https://github.com/pslyman',
   },
-  {
-    id: 2,
-    title: 'Mastodon',
-    url: 'https://vmst.io/@plym',
-    rel: 'me'
-  },
-  {
-    id: 3,
-    title: 'dev.to',
-    url: 'https://dev.to/plym',
-  }
 ];
